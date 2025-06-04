@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface Bancária BV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/phosphor-icons/1.4.2/css/phosphor.min.css">
+    <!-- Google Charts Loader -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background, similar to many apps */
+        }
+        .bv-blue {
+            background-color: #0073e6; /* BV-like blue */
+        }
+        .bv-blue-text {
+            color: #0073e6;
+        }
+        .bv-green {
+            background-color: #00a859; /* BV-like green */
+        }
+        .bv-green-text {
+            color: #00a859;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem; /* 12px */
+            padding: 1.5rem; /* 24px */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 1rem; /* 16px */
+        }
+        .icon-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #e9f2ff; /* Light blue for icon backgrounds */
+            border-radius: 0.5rem; /* 8px */
+            padding: 0.75rem; /* 12px */
+            width: 70px;
+            height: 70px;
+            font-size: 0.75rem; /* 12px */
+            color: #005bb5; /* Darker blue for icon text */
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .icon-button:hover {
+            background-color: #d1e3ff;
+        }
+        .icon-button i {
+            font-size: 1.5rem; /* 24px */
+            margin-bottom: 0.25rem; /* 4px */
+        }
+        .header-gradient {
+            background: linear-gradient(to right, #0052a2, #0073e6);
+        }
+
+        .bg-gradient-custom {
+            background: linear-gradient(120deg, #E0F2FE 0%, #FFFFFF 100%); /* Azul claro para Branco */
+        }
+        .text-primary {
+            color: #2563EB; /* Azul principal (Tailwind blue-600) */
+        }
+        .bg-primary {
+            background-color: #2563EB;
+        }
+        .hover\:bg-primary-dark:hover {
+            background-color: #1D4ED8; /* Azul mais escuro para hover (Tailwind blue-700) */
+        }
+        .text-accent {
+            color: #EC4899; /* Rosa para detalhes (Tailwind pink-500) */
+        }
+        .border-accent {
+            border-color: #EC4899;
+        }
+        .bg-accent {
+            background-color: #EC4899;
+        }
+        .hover\:bg-accent-dark:hover {
+            background-color: #DB2777; /* Rosa mais escuro para hover (Tailwind pink-600) */
+        }
+        .shadow-card {
+            box-shadow: 0 4px 10px -2px rgba(37, 99, 235, 0.1), 0 2px 6px -2px rgba(37, 99, 235, 0.06); /* Sombra azulada mais suave */
+        }
+        .sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+        .card-icon-bg {
+            background-color: #DBEAFE; /* Tailwind blue-200, para fundo de ícones nos cards */
+        }
+        /* Estilo para o contêiner do gráfico para garantir que ele preencha o espaço */
+        #chart_div {
+            width: 100%;
+            height: 100%; /* Garante que o gráfico preencha a altura do seu contêiner pai */
+        }
+    </style>
+</head>
+<body class="pb-20">
+
+    <!-- Header -->
+    <header class="header-gradient text-white p-4 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">
+<img src="Logo_BV_1.png" style="width: 35px;">            </div>
+            <div class="flex items-center">
+                <i class="ph-user-circle text-3xl"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4">
+
+        <!-- Section: Seus serviços em um só lugar -->
+        <section class="mb-8 text-center sm:text-left">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">O apoio digital</h1>
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">que seu empreendimento precisa.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="card hover:shadow-lg transition-shadow">
+                    
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Soluções de crédito<i class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">New</i></h3>
+                    <p class="text-sm text-gray-600">No Banco BV, sabemos que todo negócio precisa de um impulso para decolar. Por isso, criamos soluções de crédito que realmente atendem às suas necessidades.</p>
+                </div>
+            
+                <div class="card hover:shadow-lg transition-shadow">
+                    
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Educação Financeira<i class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">New</i></h3>
+                    <p class="text-sm text-gray-600">No BV, a gente acredita no seu potencial. Por isso, lançamos uma iniciativa com cursos gratuitos de empreendedorismo e educação financeira, feitos para você crescer e brilhar no seu negócio!</p>
+                </div>
+                  
+
+                <div id="aiChatButton" class="card hover:shadow-lg transition-shadow">
+                   <h3 class="text-lg font-semibold text-gray-800 mb-1">Ascent <i class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">New</i>
+                    </h3>
+                    <p class="text-sm text-gray-600">O Banco BV entende que seu negócio precisa de uma direção clara. Com a Ascent, nossa inteligência artificial guia sua jornada no app, garantindo que você encontre as melhores opções para ir além.</p>
+                </div>
+                                    </div>
+            </div>
+              </section>
+                      <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 text-center sm:text-left">
+
+                <!-- Card Receitas -->
+                <div class="card hover:shadow-lg transition-shadow bg-white p-6 rounded-xl shadow-card flex items-start space-x-4">
+                    <div class="p-3 rounded-full card-icon-bg">
+                        <i class="ph-bold ph-arrow-circle-up-right text-3xl text-primary"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-blue-800 mb-1">Receitas (Mês)</h3>
+                        <p class="text-3xl font-bold text-primary">R$ 5.876,00</p>
+                        <p class="text-sm text-blue-600 mt-1">Previsto: R$ 6.200,00</p>
+                    </div>
+                </div>
+            
+                <!-- Card Despesas -->
+                <div class="card hover:shadow-lg transition-shadow bg-white p-6 rounded-xl shadow-card flex items-start space-x-4">
+                    <div class="p-3 rounded-full bg-pink-100"> <!-- Fundo rosa para ícone de despesa -->
+                        <i class="ph-bold ph-arrow-circle-down-left text-3xl text-accent"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-blue-800 mb-1">Despesas (Mês)</h3>
+                        <p class="text-3xl font-bold text-accent">R$ 2.123,45</p>
+                        <p class="text-sm text-blue-600 mt-1">Principal: Fornecedores</p>
+                    </div>
+                </div>
+            </section>
+              
+
+        <!-- Section: Account Overview & Cards (Combined for better layout) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+            <!-- Account Overview Card -->
+            <section class="card">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-800">Bom dia, [usuária]</h2>
+                        <p class="text-sm text-gray-500">Bem-vinda de volta!</p>
+                    </div>
+                    <button id="toggleBalance" class="text-sm bv-blue-text hover:underline">
+                        <i class="ph-eye-slash mr-1"></i> Ocultar Saldo
+                    </button>
+                </div>
+
+                <div class="mb-6">
+                    <p class="text-sm text-gray-600">Saldo da sua Conta BV</p>
+                    <p id="balanceAmount" class="text-3xl font-bold text-gray-800">R$ 0,00</p>
+                    <!-- <p class="text-sm text-gray-600 mt-1">Crédito dispoível: <span class="font-semibold bv-blue-text">R$ 1.410,00 </span></p> -->
+                </div>
+
+                <!-- <div class="flex justify-around">
+                    <button class="icon-button">
+                        <i class="ph-qr-code"></i>
+                        <span>Pix</span>
+                    </button>
+                    <button class="icon-button">
+                        <i class="ph-credit-card"></i>
+                        <span>Meu Cartão</span>
+                    </button>
+                    <button class="icon-button">
+                        <i class="ph-money"></i>
+                        <span>Cobrar</span>
+                    </button>
+                    <button class="icon-button">
+                        <i class="ph-arrows-clockwise"></i>
+                        <span>Transferir</span>
+                    </button>
+                </div> -->
+            </section>
+
+            
+            <!-- Transações Recentes -->
+            <div class="card hover:shadow-lg transition-shadow lg:col-span-2 bg-white p-6 rounded-xl shadow-card">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-lg font-semibold text-blue-800">Transações Recentes</h3>
+                    <a href="#" class="text-sm text-primary hover:underline font-medium">Ver Todas</a>
+                </div>
+                <div class="space-y-4">
+                    <!-- Item de Transação -->
+                    <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-blue-100 rounded-full">
+                                <i class="ph-bold ph-arrow-up text-primary text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-blue-800">Pagamento Cliente X</p>
+                                <p class="text-xs text-blue-500">01 Jun, 2024 - 10:30 AM</p>
+                            </div>
+                        </div>
+                        <p class="font-semibold text-primary">+ R$ 1.250,00</p>
+                    </div>
+                    <!-- Item de Transação -->
+                    <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-pink-100 rounded-full">
+                                <i class="ph-bold ph-arrow-down text-accent text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-blue-800">Compra de Material Escritório</p>
+                                <p class="text-xs text-blue-500">31 Mai, 2024 - 02:15 PM</p>
+                            </div>
+                        </div>
+                        <p class="font-semibold text-accent">- R$ 180,70</p>
+                    </div>
+                    <!-- Item de Transação -->
+                    <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-pink-100 rounded-full">
+                                <i class="ph-bold ph-receipt text-pink-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-blue-800">Assinatura Software ABC</p>
+                                <p class="text-xs text-blue-500">30 Mai, 2024 - Assinatura Mensal</p>
+                            </div>
+                        </div>
+                        <p class="font-semibold text-pink-600">- R$ 99,00</p>
+                    </div>
+                    <!-- Item de Transação -->
+                    <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-blue-100 rounded-full">
+                                <i class="ph-bold ph-arrow-up text-primary text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-blue-800">Consultoria Financeira Y</p>
+                                <p class="text-xs text-blue-500">28 Mai, 2024 - 09:00 AM</p>
+                            </div>
+                        </div>
+                        <p class="font-semibold text-primary">+ R$ 800,00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      
+
+
+        <!-- Vehicle Financing Snippet -->
+        <section class="card mt-6">
+            <h2 class="text-xl font-semibold text-gray-800 mb-3">Credito Personalizado - Microcrédito</h2>
+            <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                <div class="flex items-center mb-3">
+                    <i class="ph-car text-3xl text-blue-600 mr-3"></i>
+                    <div>
+                        <p class="font-semibold text-gray-700">Começo de negócio<span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">R$ 10.000</span><span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">03/2024</span></p>
+                        <p class="text-sm text-gray-500">Contrato: AAA-0097<span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1"><span style="font-weight: 700;">SELIC</span> + 6% anual</span> <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">1,289% ao mês</span> </p>
+                    </div>
+                </div>
+                <div class="bg-yellow-50 border border-yellow-300 p-3 rounded-md mb-3">
+                    <p class="text-sm text-yellow-700"><i class="ph-warning-circle mr-1"></i> Sua próxima parcela vence em <strong class="font-semibold">20/07</strong></p>
+                    <p class="text-lg font-bold text-yellow-800">R$ 570,45 <span class="text-sm font-normal text-yellow-700">(incluso juros e impostos)</span> </p>
+                </div>
+                <p class="text-sm text-green-600 flex items-center">Faltam 4 de 20 parcelas.</p>
+                <p  class="text-sm text-green-600 flex items-center"  style="font-size: 13px;"> O seu financiamento está em dia!</p>
+
+
+                <div class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
+                    <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-1 rounded-lg text-xs transition-colors">
+                        <i class="ph-calendar-plus block text-lg mb-0.5 mx-auto"></i> Antecipar parcelas
+                    </button>
+                    <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-1 rounded-lg text-xs transition-colors">
+                        <i class="ph-files block text-lg mb-0.5 mx-auto"></i> Ver meu contrato
+                    </button>
+                    <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-1 rounded-lg text-xs transition-colors">
+                        <i class="ph-barcode block text-lg mb-0.5 mx-auto"></i> Quitar Parcelas
+                    </button>
+                    <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-1 rounded-lg text-xs transition-colors">
+                        <i class="ph-calculator block text-lg mb-0.5 mx-auto"></i> Simular refin.
+                    </button>
+                </div>
+                <div class="mt-4 bg-blue-500 text-white p-3 rounded-lg text-center hover:bg-blue-600 transition-colors cursor-pointer">
+                    <p class="font-semibold">Quer renegociar seu contrato de crédito com BV?</p>
+                    <p class="text-sm">Consulte a disponibilidade</p>
+                </div>
+            </div>
+        </section>
+
+  <!-- Espaço para Gráficos ou Outras Informações -->
+        <section class="card hover:shadow-lg transition-shadow bg-white p-6 rounded-xl shadow-card">
+            <h3 class="text-lg font-semibold text-blue-800 mb-4">Fluxo de Caixa Mensal</h3>
+            <!-- O gráfico de fluxo de caixa será renderizado aqui -->
+            <div id="chart_div" style="width: 100%; height: 256px;"></div> <!-- Altura ajustada para h-64 (256px) -->
+        </section>
+
+    </main>
+
+    <!-- Bottom Navigation (Mobile Focus) -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-t-md border-t border-gray-200 p-2 flex justify-around md:hidden">
+        <a href="#" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md">
+            <i class="ph-house text-2xl"></i>
+            <span class="text-xs">Início</span>
+        </a>
+        <a href="#" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md">
+            <i class="ph-list-bullets text-2xl"></i>
+            <span class="text-xs">Extrato</span>
+        </a>
+        <a href="#" class="flex flex-col items-center bv-blue-text p-2 rounded-md"> <!-- Active example -->
+            <i class="ph-credit-card text-2xl"></i>
+            <span class="text-xs">Chat</span>
+        </a>
+        <a href="#" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md">
+            <i class="ph-currency-dollar text-2xl"></i>
+            <span class="text-xs">Crédito</span>
+        </a>
+        <a href="#" id="aiChatButton" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md">
+            <i class="ph-user-list text-2xl"></i>
+            <span class="text-xs">Cursos</span>
+        </a>
+    </nav>
+
+
+    <!-- Modal do Chat IA (Exemplo Simples) -->
+    <div id="aiChatModal" class="fixed inset-0 bg-blue-900 bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-lg transform transition-all">
+            <div class="flex items-center justify-between p-5 border-b border-blue-200">
+                <h4 class="text-lg font-semibold text-primary">Assistente Virtual IA</h4>
+                <button id="closeChatModal" class="text-blue-400 hover:text-blue-600">
+                    <i class="ph-bold ph-x text-xl"></i>
+                </button>
+            </div>
+            <div class="p-6 h-96 overflow-y-auto space-y-4">
+                <div class="flex justify-start">
+                    <div class="bg-blue-50 text-blue-800 p-3 rounded-lg max-w-xs">
+                        Olá! Como posso te ajudar hoje com suas finanças?
+                    </div>
+                </div>
+                <div class="flex justify-end">
+                    <div class="bg-primary text-white p-3 rounded-lg max-w-xs">
+                        Gostaria de saber como categorizar minhas despesas.
+                    </div>
+                </div>
+                <div class="flex justify-start">
+                    <div class="bg-blue-50 text-blue-800 p-3 rounded-lg max-w-xs">
+                        Claro! Você pode categorizar suas despesas como: Custos Fixos (aluguel, salários), Custos Variáveis (matéria-prima, comissões), Despesas Operacionais (marketing, software), etc. Precisa de mais detalhes sobre alguma categoria?
+                    </div>
+                </div>
+            </div>
+            <div class="p-5 border-t border-blue-200">
+                <div class="flex items-center space-x-2">
+                    <input type="text" placeholder="Digite sua mensagem..." class="flex-1 p-3 border border-blue-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-shadow text-blue-900">
+                    <button class="bg-accent hover:bg-accent-dark text-white p-3 rounded-lg">
+                        <i class="ph-bold ph-paper-plane-tilt text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Script para o modal do chat IA
+        const aiChatButton = document.getElementById('aiChatButton');
+        const aiChatModal = document.getElementById('aiChatModal');
+        const closeChatModalButton = document.getElementById('closeChatModal');
+    
+        if (aiChatButton && aiChatModal && closeChatModalButton) {
+            aiChatButton.addEventListener('click', () => {
+                aiChatModal.classList.remove('hidden');
+            });
+            closeChatModalButton.addEventListener('click', () => {
+                aiChatModal.classList.add('hidden');
+            });
+            aiChatModal.addEventListener('click', (event) => {
+                if (event.target === aiChatModal) {
+                    aiChatModal.classList.add('hidden');
+                }
+            });
+        }
+
+        // Script para alternar a visibilidade do saldo
+        const toggleBalanceButton = document.getElementById('toggleBalance');
+        const balanceAmountElement = document.getElementById('balanceAmount');
+        let balanceVisible = false;
+        const actualBalance = "R$ 3.752,55"; // Exemplo de saldo
+
+        function updateBalanceVisibility() {
+            if (balanceVisible) {
+                balanceAmountElement.textContent = actualBalance;
+                toggleBalanceButton.innerHTML = '<i class="ph-eye mr-1"></i> Mostrar Saldo';
+            } else {
+                balanceAmountElement.textContent = 'R$ ••••••';
+                toggleBalanceButton.innerHTML = '<i class="ph-eye-slash mr-1"></i> Ocultar Saldo';
+            }
+        }
+        // Inicializa com o saldo oculto
+        updateBalanceVisibility();
+
+        toggleBalanceButton.addEventListener('click', () => {
+            balanceVisible = !balanceVisible;
+            updateBalanceVisibility();
+        });
+
+        // Carrega a API do Google Charts e desenha o gráfico de barras
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            // Cria a tabela de dados para o gráfico de barras
+            // Colunas: Mês (string), Entradas (number), Saídas (number), Saldo (number)
+            var data = google.visualization.arrayToDataTable([
+                ['Mês', 'Entradas', 'Saídas', 'Saldo'],
+                ['Jan', 5000, 2000, 3000],
+                ['Fev', 6000, 2500, 3500],
+                ['Mar', 4500, 3000, 1500],
+                ['Abr', 7000, 2800, 4200],
+                ['Mai', 5500, 3200, 2300],
+                ['Jun', 6200, 2700, 3500],
+                ['Jul', 4800, 2900, 1900]
+            ]);
+
+            // Define as opções do gráfico de barras
+            var options = {
+                chartArea: {
+                    left: '10%',
+                    top: '10%',
+                    width: '80%',
+                    height: '70%'
+                },
+                legend: { position: 'bottom' },
+                hAxis: {
+                    titleTextStyle: { color: '#333' }
+                },
+                vAxis: {
+                    titleTextStyle: { color: '#333' },
+                    format: 'currency',
+                    gridlines: { color: '#e0e0e0' }
+                },
+                colors: ['#74f1c3', '#f1748b', '#429dff'], // Cores para Entradas, Saídas e Saldo
+                isStacked: false, // Barras não empilhadas
+                backgroundColor: { fill: 'transparent' },
+                animation: {
+                    duration: 1000,
+                    easing: 'out',
+                    startup: true
+                }
+            };
+
+            // Cria uma nova instância do gráfico de barras (ColumnChart) e o desenha no elemento 'chart_div'
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+
+            // Adiciona um listener para redesenhar o gráfico quando a janela for redimensionada
+            window.addEventListener('resize', function() {
+                chart.draw(data, options);
+            });
+
+            // Desenha o gráfico inicialmente
+            chart.draw(data, options);
+        }
+    </script>
+
+</body>
+</html>
