@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/phosphor-icons/1.4.2/css/phosphor.min.css">
-    <!-- Google Charts Loader -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <style>
         body {
@@ -97,15 +96,52 @@
             width: 100%;
             height: 100%; /* Garante que o gráfico preencha a altura do seu contêiner pai */
         }
+
+        /* Styles for fade-in/out */
+        .fade-section {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .active-section {
+            opacity: 1;
+        }
+        .hidden {
+            display: none;
+        }
+
+                ion-icon {
+  font-size: 20px;
+}
+
+input:focus {
+    outline: none; /* Removes the default blue/orange outline */
+    border: none; /* Removes the border */
+    /* Add any other desired styles, e.g., a custom bottom border or shadow */
+     /* Example: a subtle blue line at the bottom */
+}
+
+/* Optional: To ensure the input has a border when NOT focused, if it's not set elsewhere */
+input {
+   
+    border: none;
+    background-color: #8ac4fa;
+    border-radius: 20px;
+    /* Example: default border */
+     padding: 10px;
+}
     </style>
+ <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
 </head>
 <body class="pb-20">
 
-    <!-- Header -->
     <header class="header-gradient text-white p-4 shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-2xl font-bold">
-<img src="./Logo_BV_1.png" style="width: 35px;">            </div>
+                <img src="Logo_BV_1.png" style="width: 35px;">
+            </div>
             <div class="flex items-center">
                 <i class="ph-user-circle text-3xl"></i>
             </div>
@@ -114,35 +150,27 @@
 
     <main class="container mx-auto p-4">
 
-        <!-- Section: Seus serviços em um só lugar -->
-        <section class="mb-8 text-center sm:text-left">
-            <h1 class="text-3xl font-bold text-gray-800 mb-2">O apoio digital</h1>
-            <h2 class="text-xl font-semibold text-gray-700 mb-4">que seu empreendimento precisa.</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="card hover:shadow-lg transition-shadow">
-                    
-                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Soluções de crédito<i class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">New</i></h3>
-                    <p class="text-sm text-gray-600">No Banco BV, sabemos que todo negócio precisa de um impulso para decolar. Por isso, criamos soluções de crédito que realmente atendem às suas necessidades.</p>
+        <div id="homeSection" class="active-section">
+            <section class="mb-8 text-center sm:text-left">
+                <h1 class="text-3xl font-bold text-gray-800 mb-2">O apoio digital</h1>
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">que seu empreendimento precisa.</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="card hover:shadow-lg transition-shadow">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Soluções de crédito<i class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">New</i></h3>
+                        <p class="text-sm text-gray-600">No Banco BV, sabemos que todo negócio precisa de um impulso para decolar. Por isso, criamos soluções de crédito que realmente atendem às suas necessidades.</p>
+                    </div>
+                    <div class="card hover:shadow-lg transition-shadow">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Educação Financeira<i class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">New</i></h3>
+                        <p class="text-sm text-gray-600">No BV, a gente acredita no seu potencial. Por isso, lançamos uma iniciativa com cursos gratuitos de empreendedorismo e educação financeira, feitos para você crescer e brilhar no seu negócio!</p>
+                    </div>
+                    <div id="aiChatButton" class="card hover:shadow-lg transition-shadow">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Ascent <i class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">New</i></h3>
+                        <p class="text-sm text-gray-600">O Banco BV entende que seu negócio precisa de uma direção clara. Com a Ascent, nossa inteligência artificial guia sua jornada no app, garantindo que você encontre as melhores opções para ir além.</p>
+                    </div>
                 </div>
-            
-                <div class="card hover:shadow-lg transition-shadow">
-                    
-                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Educação Financeira<i class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">New</i></h3>
-                    <p class="text-sm text-gray-600">No BV, a gente acredita no seu potencial. Por isso, lançamos uma iniciativa com cursos gratuitos de empreendedorismo e educação financeira, feitos para você crescer e brilhar no seu negócio!</p>
-                </div>
-                  
+            </section>
 
-                <div id="aiChatButton" class="card hover:shadow-lg transition-shadow">
-                   <h3 class="text-lg font-semibold text-gray-800 mb-1">Ascent <i class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">New</i>
-                    </h3>
-                    <p class="text-sm text-gray-600">O Banco BV entende que seu negócio precisa de uma direção clara. Com a Ascent, nossa inteligência artificial guia sua jornada no app, garantindo que você encontre as melhores opções para ir além.</p>
-                </div>
-                                    </div>
-            </div>
-              </section>
-                      <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 text-center sm:text-left">
-
-                <!-- Card Receitas -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 text-center sm:text-left">
                 <div class="card hover:shadow-lg transition-shadow bg-white p-6 rounded-xl shadow-card flex items-start space-x-4">
                     <div class="p-3 rounded-full card-icon-bg">
                         <i class="ph-bold ph-arrow-circle-up-right text-3xl text-primary"></i>
@@ -153,11 +181,8 @@
                         <p class="text-sm text-blue-600 mt-1">Previsto: R$ 6.200,00</p>
                     </div>
                 </div>
-            
-                <!-- Card Despesas -->
                 <div class="card hover:shadow-lg transition-shadow bg-white p-6 rounded-xl shadow-card flex items-start space-x-4">
-                    <div class="p-3 rounded-full bg-pink-100"> <!-- Fundo rosa para ícone de despesa -->
-                        <i class="ph-bold ph-arrow-circle-down-left text-3xl text-accent"></i>
+                    <div class="p-3 rounded-full bg-pink-100"> <i class="ph-bold ph-arrow-circle-down-left text-3xl text-accent"></i>
                     </div>
                     <div>
                         <h3 class="text-lg font-semibold text-blue-800 mb-1">Despesas (Mês)</h3>
@@ -166,12 +191,7 @@
                     </div>
                 </div>
             </section>
-              
 
-        <!-- Section: Account Overview & Cards (Combined for better layout) -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-
-            <!-- Account Overview Card -->
             <section class="card">
                 <div class="flex justify-between items-center mb-4">
                     <div>
@@ -182,35 +202,51 @@
                         <i class="ph-eye-slash mr-1"></i> Ocultar Saldo
                     </button>
                 </div>
-
                 <div class="mb-6">
                     <p class="text-sm text-gray-600">Saldo da sua Conta BV</p>
                     <p id="balanceAmount" class="text-3xl font-bold text-gray-800">R$ 0,00</p>
-                    <!-- <p class="text-sm text-gray-600 mt-1">Crédito dispoível: <span class="font-semibold bv-blue-text">R$ 1.410,00 </span></p> -->
                 </div>
-
-                <!-- <div class="flex justify-around">
-                    <button class="icon-button">
-                        <i class="ph-qr-code"></i>
-                        <span>Pix</span>
-                    </button>
-                    <button class="icon-button">
-                        <i class="ph-credit-card"></i>
-                        <span>Meu Cartão</span>
-                    </button>
-                    <button class="icon-button">
-                        <i class="ph-money"></i>
-                        <span>Cobrar</span>
-                    </button>
-                    <button class="icon-button">
-                        <i class="ph-arrows-clockwise"></i>
-                        <span>Transferir</span>
-                    </button>
-                </div> -->
             </section>
 
-            
-            <!-- Transações Recentes -->
+            <section class="card mt-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-3">Credito Personalizado - Microcrédito</h2>
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    <div class="flex items-center mb-3">
+                        <i class="ph-car text-3xl text-blue-600 mr-3"></i>
+                        <div>
+                            <p class="font-semibold text-gray-700">Começo de negócio<span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">R$ 10.000</span><span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">03/2024</span></p>
+                            <p class="text-sm text-gray-500">Contrato: AAA-0097<span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1"><span style="font-weight: 700;">SELIC</span> + 6% anual</span> <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">1,289% ao mês</span> </p>
+                        </div>
+                    </div>
+                    <div class="bg-yellow-50 border border-yellow-300 p-3 rounded-md mb-3">
+                        <p class="text-sm text-yellow-700"><i class="ph-warning-circle mr-1"></i> Sua próxima parcela vence em <strong class="font-semibold">20/07</strong></p>
+                        <p class="text-lg font-bold text-yellow-800">R$ 570,45 <span class="text-sm font-normal text-yellow-700">(incluso juros e impostos)</span> </p>
+                    </div>
+                    <p class="text-sm text-green-600 flex items-center">Faltam 4 de 20 parcelas.</p>
+                    <p class="text-sm text-green-600 flex items-center" style="font-size: 13px;"> O seu financiamento está em dia!</p>
+
+                    <div class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
+                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-1 rounded-lg text-xs transition-colors">
+                            <i class="ph-calendar-plus block text-lg mb-0.5 mx-auto"></i> Antecipar parcelas
+                        </button>
+                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-1 rounded-lg text-xs transition-colors">
+                            <i class="ph-files block text-lg mb-0.5 mx-auto"></i> Ver meu contrato
+                        </button>
+                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-1 rounded-lg text-xs transition-colors">
+                            <i class="ph-barcode block text-lg mb-0.5 mx-auto"></i> Quitar Parcelas
+                        </button>
+                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-1 rounded-lg text-xs transition-colors">
+                            <i class="ph-calculator block text-lg mb-0.5 mx-auto"></i> Simular refin.
+                        </button>
+                    </div>
+                    <div class="mt-4 bg-blue-500 text-white p-3 rounded-lg text-center hover:bg-blue-600 transition-colors cursor-pointer">
+                        <p class="font-semibold">Quer renegociar seu contrato de crédito com BV?</p>
+                        <p class="text-sm">Consulte a disponibilidade</p>
+                    </div>
+                </div>
+            </section>
+
+   <!-- Transações Recentes -->
             <div class="card hover:shadow-lg transition-shadow lg:col-span-2 bg-white p-6 rounded-xl shadow-card">
                 <div class="flex items-center justify-between mb-6">
                     <h3 class="text-lg font-semibold text-blue-800">Transações Recentes</h3>
@@ -275,86 +311,84 @@
 
       
 
+            <section class="card hover:shadow-lg transition-shadow bg-white p-6 rounded-xl shadow-card">
+                <h3 class="text-lg font-semibold text-blue-800 mb-4">Fluxo de Caixa Mensal</h3>
+                <div id="chart_div" style="width: 100%; height: 256px;"></div> </section>
+        </div>
 
-        <!-- Vehicle Financing Snippet -->
-        <section class="card mt-6">
-            <h2 class="text-xl font-semibold text-gray-800 mb-3">Credito Personalizado - Microcrédito</h2>
-            <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                <div class="flex items-center mb-3">
-                    <i class="ph-car text-3xl text-blue-600 mr-3"></i>
-                    <div>
-                        <p class="font-semibold text-gray-700">Começo de negócio<span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">R$ 10.000</span><span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">03/2024</span></p>
-                        <p class="text-sm text-gray-500">Contrato: AAA-0097<span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1"><span style="font-weight: 700;">SELIC</span> + 6% anual</span> <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">1,289% ao mês</span> </p>
+        <div id="extratoSection" class="fade-section hidden">
+            <section class="card">
+                 <!-- Transações Recentes -->
+            <div class="card hover:shadow-lg transition-shadow lg:col-span-2 bg-white p-6 rounded-xl shadow-card">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-lg font-semibold text-blue-800">Histórico de Transações</h3>
+                    <a href="#" class="text-sm text-primary hover:underline font-medium">Ver Todas</a>
+                </div>
+                <div class="space-y-4">
+                    <!-- Item de Transação -->
+                    <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-blue-100 rounded-full">
+                                <i class="ph-bold ph-arrow-up text-primary text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-blue-800">Pagamento Cliente X</p>
+                                <p class="text-xs text-blue-500">01 Jun, 2024 - 10:30 AM</p>
+                            </div>
+                        </div>
+                        <p class="font-semibold text-primary">+ R$ 1.250,00</p>
+                    </div>
+                    <!-- Item de Transação -->
+                    <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-pink-100 rounded-full">
+                                <i class="ph-bold ph-arrow-down text-accent text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-blue-800">Compra de Material Escritório</p>
+                                <p class="text-xs text-blue-500">31 Mai, 2024 - 02:15 PM</p>
+                            </div>
+                        </div>
+                        <p class="font-semibold text-accent">- R$ 180,70</p>
+                    </div>
+                    <!-- Item de Transação -->
+                    <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-pink-100 rounded-full">
+                                <i class="ph-bold ph-receipt text-pink-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-blue-800">Assinatura Software ABC</p>
+                                <p class="text-xs text-blue-500">30 Mai, 2024 - Assinatura Mensal</p>
+                            </div>
+                        </div>
+                        <p class="font-semibold text-pink-600">- R$ 99,00</p>
+                    </div>
+                    <!-- Item de Transação -->
+                    <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-blue-100 rounded-full">
+                                <i class="ph-bold ph-arrow-up text-primary text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-blue-800">Consultoria Financeira Y</p>
+                                <p class="text-xs text-blue-500">28 Mai, 2024 - 09:00 AM</p>
+                            </div>
+                        </div>
+                        <p class="font-semibold text-primary">+ R$ 800,00</p>
                     </div>
                 </div>
-                <div class="bg-yellow-50 border border-yellow-300 p-3 rounded-md mb-3">
-                    <p class="text-sm text-yellow-700"><i class="ph-warning-circle mr-1"></i> Sua próxima parcela vence em <strong class="font-semibold">20/07</strong></p>
-                    <p class="text-lg font-bold text-yellow-800">R$ 570,45 <span class="text-sm font-normal text-yellow-700">(incluso juros e impostos)</span> </p>
-                </div>
-                <p class="text-sm text-green-600 flex items-center">Faltam 4 de 20 parcelas.</p>
-                <p  class="text-sm text-green-600 flex items-center"  style="font-size: 13px;"> O seu financiamento está em dia!</p>
-
-
-                <div class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
-                    <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-1 rounded-lg text-xs transition-colors">
-                        <i class="ph-calendar-plus block text-lg mb-0.5 mx-auto"></i> Antecipar parcelas
-                    </button>
-                    <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-1 rounded-lg text-xs transition-colors">
-                        <i class="ph-files block text-lg mb-0.5 mx-auto"></i> Ver meu contrato
-                    </button>
-                    <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-1 rounded-lg text-xs transition-colors">
-                        <i class="ph-barcode block text-lg mb-0.5 mx-auto"></i> Quitar Parcelas
-                    </button>
-                    <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-1 rounded-lg text-xs transition-colors">
-                        <i class="ph-calculator block text-lg mb-0.5 mx-auto"></i> Simular refin.
-                    </button>
-                </div>
-                <div class="mt-4 bg-blue-500 text-white p-3 rounded-lg text-center hover:bg-blue-600 transition-colors cursor-pointer">
-                    <p class="font-semibold">Quer renegociar seu contrato de crédito com BV?</p>
-                    <p class="text-sm">Consulte a disponibilidade</p>
-                </div>
             </div>
-        </section>
 
-  <!-- Espaço para Gráficos ou Outras Informações -->
-        <section class="card hover:shadow-lg transition-shadow bg-white p-6 rounded-xl shadow-card">
-            <h3 class="text-lg font-semibold text-blue-800 mb-4">Fluxo de Caixa Mensal</h3>
-            <!-- O gráfico de fluxo de caixa será renderizado aqui -->
-            <div id="chart_div" style="width: 100%; height: 256px;"></div> <!-- Altura ajustada para h-64 (256px) -->
-        </section>
+      
+            </section>
+        </div>
 
-    </main>
-
-    <!-- Bottom Navigation (Mobile Focus) -->
-    <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-t-md border-t border-gray-200 p-2 flex justify-around md:hidden">
-        <a href="#" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md">
-            <i class="ph-house text-2xl"></i>
-            <span class="text-xs">Início</span>
-        </a>
-        <a href="#" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md">
-            <i class="ph-list-bullets text-2xl"></i>
-            <span class="text-xs">Extrato</span>
-        </a>
-        <a href="#" class="flex flex-col items-center bv-blue-text p-2 rounded-md"> <!-- Active example -->
-            <i class="ph-credit-card text-2xl"></i>
-            <span class="text-xs">Chat</span>
-        </a>
-        <a href="#" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md">
-            <i class="ph-currency-dollar text-2xl"></i>
-            <span class="text-xs">Crédito</span>
-        </a>
-        <a href="#" id="aiChatButton" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md">
-            <i class="ph-user-list text-2xl"></i>
-            <span class="text-xs">Cursos</span>
-        </a>
-    </nav>
-
-
-    <!-- Modal do Chat IA (Exemplo Simples) -->
-    <div id="aiChatModal" class="fixed inset-0 bg-blue-900 bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden">
-        <div class="bg-white rounded-xl shadow-xl w-full max-w-lg transform transition-all">
+        <div id="chatSection" class="fade-section hidden">
+            <section class="card">
+          <div class="bg-white rounded-xl shadow-xl w-full max-w-lg transform transition-all">
             <div class="flex items-center justify-between p-5 border-b border-blue-200">
-                <h4 class="text-lg font-semibold text-primary">Assistente Virtual IA</h4>
+                <h4 class="text-lg font-semibold text-primary">Ascent</h4>
                 <button id="closeChatModal" class="text-blue-400 hover:text-blue-600">
                     <i class="ph-bold ph-x text-xl"></i>
                 </button>
@@ -362,8 +396,7 @@
             <div class="p-6 h-96 overflow-y-auto space-y-4">
                 <div class="flex justify-start">
                     <div class="bg-blue-50 text-blue-800 p-3 rounded-lg max-w-xs">
-                        Olá! Como posso te ajudar hoje com suas finanças?
-                    </div>
+Olá, me chamo Ascent, sou sua assistente virtual e estou pronta para te ajudar a impulsionar o seu negócio. Minha missão é simplificar o seu dia a dia e te apoiar em todas as suas atividades financeiras, desde tirar dúvidas até te guiar em novas oportunidades.                    </div>
                 </div>
                 <div class="flex justify-end">
                     <div class="bg-primary text-white p-3 rounded-lg max-w-xs">
@@ -377,14 +410,135 @@
                 </div>
             </div>
             <div class="p-5 border-t border-blue-200">
+                <p> Sugestões de perguntas comuns:</p>
+              <button>teste</button> 
+               <button>teste</button> 
+                <button>teste</button> 
                 <div class="flex items-center space-x-2">
                     <input type="text" placeholder="Digite sua mensagem..." class="flex-1 p-3 border border-blue-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-shadow text-blue-900">
                     <button class="bg-accent hover:bg-accent-dark text-white p-3 rounded-lg">
-                        <i class="ph-bold ph-paper-plane-tilt text-xl"></i>
-                    </button>
+<ion-icon name="send-outline"></ion-icon>                    </button>
                 </div>
             </div>
+        </div>      
+            </section>
         </div>
+
+        <div id="creditoSection" class="fade-section hidden">
+            <section class="card">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Opções de Crédito</h2>
+                <p class="text-gray-600">Explore as diversas linhas de crédito disponíveis para o seu negócio. (Conteúdo simulado)</p>
+                <ul class="list-disc list-inside mt-4 text-gray-700">
+                    <li>Microcrédito para Pequenas Empresas</li>
+                    <li>Capital de Giro</li>
+                    <li>Financiamento de Veículos</li>
+                </ul>
+            </section>
+            <section class="card">
+                <div >
+                <h2 class="text-xl font-semibold text-gray-800 mb-3">Credito Personalizado - Microcrédito</h2>
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    <div class="flex items-center mb-3">
+                        <i class="ph-car text-3xl text-blue-600 mr-3"></i>
+                        <div>
+                            <p class="font-semibold text-gray-700">Começo de negócio<span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">R$ 10.000</span><span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">03/2024</span></p>
+                            <p class="text-sm text-gray-500">Contrato: AAA-0097<span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1"><span style="font-weight: 700;">SELIC</span> + 6% anual</span> <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">1,289% ao mês</span> </p>
+                        </div>
+                    </div>
+                    <div class="bg-yellow-50 border border-yellow-300 p-3 rounded-md mb-3">
+                        <p class="text-sm text-yellow-700"><i class="ph-warning-circle mr-1"></i> Sua próxima parcela vence em <strong class="font-semibold">20/07</strong></p>
+                        <p class="text-lg font-bold text-yellow-800">R$ 570,45 <span class="text-sm font-normal text-yellow-700">(incluso juros e impostos)</span> </p>
+                    </div>
+                    <p class="text-sm text-green-600 flex items-center">Faltam 4 de 20 parcelas.</p>
+                    <p class="text-sm text-green-600 flex items-center" style="font-size: 13px;"> O seu financiamento está em dia!</p>
+
+                    <div class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
+                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-1 rounded-lg text-xs transition-colors">
+                            <i class="ph-calendar-plus block text-lg mb-0.5 mx-auto"></i> Antecipar parcelas
+                        </button>
+                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-1 rounded-lg text-xs transition-colors">
+                            <i class="ph-files block text-lg mb-0.5 mx-auto"></i> Ver meu contrato
+                        </button>
+                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-1 rounded-lg text-xs transition-colors">
+                            <i class="ph-barcode block text-lg mb-0.5 mx-auto"></i> Quitar Parcelas
+                        </button>
+                        <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-1 rounded-lg text-xs transition-colors">
+                            <i class="ph-calculator block text-lg mb-0.5 mx-auto"></i> Simular refin.
+                        </button>
+                    </div>
+                    <div class="mt-4 bg-blue-500 text-white p-3 rounded-lg text-center hover:bg-blue-600 transition-colors cursor-pointer">
+                        <p class="font-semibold">Quer renegociar seu contrato de crédito com BV?</p>
+                        <p class="text-sm">Consulte a disponibilidade</p>
+                    </div>
+                </div>
+</div>
+            </section>
+        </div>
+
+        <div id="cursosSection" class="fade-section hidden">
+              <section class="mb-8 text-center sm:text-left">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Construindo </h1>
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">o seu negócio com conhecimento.</h2>
+            
+            <div class="card hover:shadow-lg transition-shadow">
+                <h3 class="text-lg font-semibold text-gray-800 mb-1">Perfil do usuário</h3>
+                <p class="text-sm text-gray-600">Que tal ir além? Com base nas suas ações, preparamos uma seleção de cursos online para você impulsionar seu conhecimento financeiro. Conte com nossa equipe de profissionais para aprender o que há de mais relevante e atual no mercado.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div  style="display: flex;">
+                    <p class="text-sm text-gray-600"><ion-icon name="search-outline"></ion-icon></p> 
+                    <input type="text" style="margin-left: 5px;   padding:3px 5px 3px 5px; width: 100%
+">
+                </div>
+
+                <div class="card hover:shadow-lg transition-shadow">
+                    <p class="text-sm text-gray-600 mb-4">No BV, a gente acredita no seu potencial. Por isso, lançamos uma iniciativa com cursos gratuitos de empreendedorismo e educação financeira, feitos para você crescer e brilhar no seu negócio!</p>
+                    <div class="video-player-container w-full h-48 bg-gray-200 rounded-md flex items-center justify-center overflow-hidden">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2">Assista ao nosso vídeo sobre empreendedorismo!</p>
+                </div>
+
+                <div class="card hover:shadow-lg transition-shadow">
+                    <p class="text-sm text-gray-600 mb-4">O Banco BV entende que seu negócio precisa de uma direção clara. Com a Ascent, nossa inteligência artificial guia sua jornada no app, garantindo que você encontre as melhores opções para ir além.</p>
+                    <div class="video-player-container w-full h-48 bg-gray-200 rounded-md flex items-center justify-center overflow-hidden">
+                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2">Saiba como a Ascent pode impulsionar seu negócio!</p>
+                </div>
+            </div>
+              </section>
+        </div>
+
+    </main>
+
+    <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-t-md border-t border-gray-200 p-2 flex justify-around md:hidden">
+        <a href="#" id="navHome" class="flex flex-col items-center bv-blue-text font-bold p-2 rounded-md">
+            <i class="ph-house text-2xl"></i>
+            <span class="text-xs">Início</span>
+        </a>
+        <a href="#" id="navExtrato" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md">
+            <i class="ph-list-bullets text-2xl"></i>
+            <span class="text-xs">Extrato</span>
+        </a>
+        <a href="#" id="navChat" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md">
+            <i class="ph-credit-card text-2xl"></i>
+            <span class="text-xs">Chat</span>
+        </a>
+        <a href="#" id="navCredito" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md">
+            <i class="ph-currency-dollar text-2xl"></i>
+            <span class="text-xs">Crédito</span>
+        </a>
+        <a href="#" id="navCursos" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md">
+            <i class="ph-user-list text-2xl"></i>
+            <span class="text-xs">Cursos</span>
+        </a>
+    </nav>
+
+
+    <div id="aiChatModal" class="fixed inset-0 bg-blue-900 bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden">
+       
     </div>
 
     <script>
@@ -486,6 +640,66 @@
             // Desenha o gráfico inicialmente
             chart.draw(data, options);
         }
+
+        // --- New JavaScript for Section Fading ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('nav a');
+            const sections = document.querySelectorAll('main > div'); // Select all direct div children of main
+
+            function showSection(sectionId) {
+                const currentActiveSection = document.querySelector('.active-section');
+                if (currentActiveSection) {
+                    currentActiveSection.classList.remove('active-section');
+                    currentActiveSection.classList.add('fade-section', 'hidden'); // Fade out and then hide
+                }
+
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    // Remove hidden and fade-section first to allow display block
+                    targetSection.classList.remove('hidden', 'fade-section');
+                    // Force reflow to ensure display: block is applied before transition
+                    void targetSection.offsetWidth; 
+                    targetSection.classList.add('active-section'); // Fade in
+                }
+
+                // Update active navigation link styling
+                navLinks.forEach(link => {
+                    link.classList.remove('bv-blue-text', 'font-bold');
+                    link.classList.add('text-gray-600');
+                });
+                const activeNavLink = document.querySelector(`#nav${sectionId.replace('Section', '')}`);
+                if (activeNavLink) {
+                    activeNavLink.classList.remove('text-gray-600');
+                    activeNavLink.classList.add('bv-blue-text', 'font-bold');
+                }
+            }
+
+            // Set initial active state for Home on load
+            const initialActiveLink = document.getElementById('navHome');
+            if (initialActiveLink) {
+                initialActiveLink.classList.remove('text-gray-600');
+                initialActiveLink.classList.add('bv-blue-text', 'font-bold');
+            }
+
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent default link behavior
+                    const sectionIdMap = {
+                        'navHome': 'homeSection',
+                        'navExtrato': 'extratoSection',
+                        'navChat': 'chatSection',
+                        'navCredito': 'creditoSection',
+                        'navCursos': 'cursosSection'
+                    };
+                    const clickedLinkId = e.currentTarget.id;
+                    const targetSectionId = sectionIdMap[clickedLinkId];
+                    if (targetSectionId) {
+                        showSection(targetSectionId);
+                    }
+                });
+            });
+        });
     </script>
 
 </body>
