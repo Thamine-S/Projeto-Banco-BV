@@ -8,6 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/phosphor-icons/1.4.2/css/phosphor.min.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <link rel="icon" type="image/png" href="./Logo_BV_1.png">
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -109,38 +112,32 @@
             display: none;
         }
 
-                ion-icon {
-  font-size: 20px;
-}
+        ion-icon {
+            font-size: 20px;
+        }
 
-input:focus {
-    outline: none; /* Removes the default blue/orange outline */
-    border: none; /* Removes the border */
-    /* Add any other desired styles, e.g., a custom bottom border or shadow */
-     /* Example: a subtle blue line at the bottom */
-}
+        input:focus {
+            outline: none; /* Removes the default blue/orange outline */
+            border: none; /* Removes the border */
+        }
 
-/* Optional: To ensure the input has a border when NOT focused, if it's not set elsewhere */
-input {
-   
-    border: none;
-    background-color: #8ac4fa;
-    border-radius: 20px;
-    /* Example: default border */
-     padding: 10px;
-}
+        /* Optional: To ensure the input has a border when NOT focused, if it's not set elsewhere */
+        input {
+            border: none;
+            background-color: #8ac4fa;
+            border-radius: 20px;
+            padding: 10px;
+        }
     </style>
- <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body class="pb-20">
 
     <header class="header-gradient text-white p-4 shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-2xl font-bold">
-                <img src="Logo_BV_1.png" style="width: 35px;">
+                <img src="/Logo_BV_1.png" alt="Logo BV" style="width: 35px;">
             </div>
             <div class="flex items-center">
                 <i class="ph-user-circle text-3xl"></i>
@@ -155,15 +152,19 @@ input {
                 <h1 class="text-3xl font-bold text-gray-800 mb-2">O apoio digital</h1>
                 <h2 class="text-xl font-semibold text-gray-700 mb-4">que seu empreendimento precisa.</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="card hover:shadow-lg transition-shadow">
+                    <!-- INÍCIO DA ALTERAÇÃO: Adicionado ID ao card "Soluções de crédito" -->
+                    <div id="creditoCard" class="card hover:shadow-lg transition-shadow cursor-pointer">
+                    <!-- FIM DA ALTERAÇÃO -->
                         <h3 class="text-lg font-semibold text-gray-800 mb-1">Soluções de crédito<i class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">New</i></h3>
                         <p class="text-sm text-gray-600">No Banco BV, sabemos que todo negócio precisa de um impulso para decolar. Por isso, criamos soluções de crédito que realmente atendem às suas necessidades.</p>
                     </div>
-                    <div class="card hover:shadow-lg transition-shadow">
+                    <!-- INÍCIO DA ALTERAÇÃO: Adicionado ID ao card "Educação Financeira" -->
+                    <div id="cursosCard" class="card hover:shadow-lg transition-shadow cursor-pointer">
+                    <!-- FIM DA ALTERAÇÃO -->
                         <h3 class="text-lg font-semibold text-gray-800 mb-1">Educação Financeira<i class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">New</i></h3>
                         <p class="text-sm text-gray-600">No BV, a gente acredita no seu potencial. Por isso, lançamos uma iniciativa com cursos gratuitos de empreendedorismo e educação financeira, feitos para você crescer e brilhar no seu negócio!</p>
                     </div>
-                    <div id="aiChatButton" class="card hover:shadow-lg transition-shadow">
+                    <div id="aiChatButton" class="card hover:shadow-lg transition-shadow cursor-pointer">
                         <h3 class="text-lg font-semibold text-gray-800 mb-1">Ascent <i class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">New</i></h3>
                         <p class="text-sm text-gray-600">O Banco BV entende que seu negócio precisa de uma direção clara. Com a Ascent, nossa inteligência artificial guia sua jornada no app, garantindo que você encontre as melhores opções para ir além.</p>
                     </div>
@@ -246,11 +247,11 @@ input {
                 </div>
             </section>
 
-   <!-- Transações Recentes -->
+    <!-- Transações Recentes -->
             <div class="card hover:shadow-lg transition-shadow lg:col-span-2 bg-white p-6 rounded-xl shadow-card">
                 <div class="flex items-center justify-between mb-6">
                     <h3 class="text-lg font-semibold text-blue-800">Transações Recentes</h3>
-                    <a href="#" class="text-sm text-primary hover:underline font-medium">Ver Todas</a>
+                    <a href="#" id="verTransacoes" class="text-sm text-primary hover:underline font-medium">Ver Todas</a>
                 </div>
                 <div class="space-y-4">
                     <!-- Item de Transação -->
@@ -309,16 +310,13 @@ input {
             </div>
         </section>
 
-      
-
             <section class="card hover:shadow-lg transition-shadow bg-white p-6 rounded-xl shadow-card">
                 <h3 class="text-lg font-semibold text-blue-800 mb-4">Fluxo de Caixa Mensal</h3>
                 <div id="chart_div" style="width: 100%; height: 256px;"></div> </section>
         </div>
 
         <div id="extratoSection" class="fade-section hidden">
-            <section class="card">
-                 <!-- Transações Recentes -->
+            <section >
             <div class="card hover:shadow-lg transition-shadow lg:col-span-2 bg-white p-6 rounded-xl shadow-card">
                 <div class="flex items-center justify-between mb-6">
                     <h3 class="text-lg font-semibold text-blue-800">Histórico de Transações</h3>
@@ -351,7 +349,8 @@ input {
                         </div>
                         <p class="font-semibold text-accent">- R$ 180,70</p>
                     </div>
-                    <!-- Item de Transação -->
+                   
+                     <!-- Item de Transação -->
                     <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
                         <div class="flex items-center space-x-3">
                             <div class="p-2 bg-pink-100 rounded-full">
@@ -364,6 +363,111 @@ input {
                         </div>
                         <p class="font-semibold text-pink-600">- R$ 99,00</p>
                     </div>
+                     <!-- Item de Transação -->
+                    <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-pink-100 rounded-full">
+                                <i class="ph-bold ph-receipt text-pink-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-blue-800">Despesa D</p>
+                                <p class="text-xs text-blue-500">30 Mai, 2024 - Assinatura Mensal</p>
+                            </div>
+                        </div>
+                        <p class="font-semibold text-pink-600">- R$ 12,00</p>
+                    </div>
+                     <!-- Item de Transação -->
+                    <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-pink-100 rounded-full">
+                                <i class="ph-bold ph-receipt text-pink-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-blue-800">Assinatura Software ABC</p>
+                                <p class="text-xs text-blue-500">30 Mai, 2024 - Assinatura Mensal</p>
+                            </div>
+                        </div>
+                        <p class="font-semibold text-blue-600">+ R$ 344,00</p>
+                    </div>
+                     <!-- Item de Transação -->
+                    <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-pink-100 rounded-full">
+                                <i class="ph-bold ph-receipt text-pink-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-blue-800">Pagamento Cliente C</p>
+                                <p class="text-xs text-blue-500">30 Mai, 2024 - Assinatura Mensal</p>
+                            </div>
+                        </div>
+                        <p class="font-semibold text-blue-600"> R$ 82,00</p>
+                    </div>
+                     <!-- Item de Transação -->
+                    <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-pink-100 rounded-full">
+                                <i class="ph-bold ph-receipt text-pink-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-blue-800">Despesa W</p>
+                                <p class="text-xs text-blue-500">23 Mai, 2024 - Assinatura Mensal</p>
+                            </div>
+                        </div>
+                        <p class="font-semibold text-pink-600">- R$ 100,00</p>
+                    </div>
+                     <!-- Item de Transação -->
+                    <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-pink-100 rounded-full">
+                                <i class="ph-bold ph-receipt text-pink-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-blue-800">Despesa X</p>
+                                <p class="text-xs text-blue-500">19 Mai, 2024 - Assinatura Mensal</p>
+                            </div>
+                        </div>
+                        <p class="font-semibold text-pink-600">- R$ 10,00</p>
+                    </div>
+                     <!-- Item de Transação -->
+                    <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-pink-100 rounded-full">
+                                <i class="ph-bold ph-receipt text-pink-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-blue-800">Pagamento Cliente A</p>
+                                <p class="text-xs text-blue-500">14 Mai, 2024 - Assinatura Mensal</p>
+                            </div>
+                        </div>
+                        <p class="font-semibold text-blue-600">+ R$ 1200,00</p>
+                    </div>
+                     <!-- Item de Transação -->
+                    <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-pink-100 rounded-full">
+                                <i class="ph-bold ph-receipt text-pink-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-blue-800">Despesa Y</p>
+                                <p class="text-xs text-blue-500">14 Mai, 2024 - Assinatura Mensal</p>
+                            </div>
+                        </div>
+                        <p class="font-semibold text-pink-600">- R$ 20,00</p>
+                    </div>
+                     <!-- Item de Transação -->
+                    <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
+                        <div class="flex items-center space-x-3">
+                            <div class="p-2 bg-pink-100 rounded-full">
+                                <i class="ph-bold ph-receipt text-pink-600 text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-blue-800">Pagamento Feira X</p>
+                                <p class="text-xs text-blue-500">12 Mai, 2024 - Assinatura Mensal</p>
+                            </div>
+                        </div>
+                        <p class="font-semibold text-blue-600">+ R$ 2000,00</p>
+                    </div>
+
                     <!-- Item de Transação -->
                     <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
                         <div class="flex items-center space-x-3">
@@ -371,7 +475,7 @@ input {
                                 <i class="ph-bold ph-arrow-up text-primary text-lg"></i>
                             </div>
                             <div>
-                                <p class="font-medium text-blue-800">Consultoria Financeira Y</p>
+                                <p class="font-medium text-blue-800">Pagamento Cliente Z</p>
                                 <p class="text-xs text-blue-500">28 Mai, 2024 - 09:00 AM</p>
                             </div>
                         </div>
@@ -380,47 +484,54 @@ input {
                 </div>
             </div>
 
-      
             </section>
         </div>
 
         <div id="chatSection" class="fade-section hidden">
-            <section class="card">
-          <div class="bg-white rounded-xl shadow-xl w-full max-w-lg transform transition-all">
-            <div class="flex items-center justify-between p-5 border-b border-blue-200">
-                <h4 class="text-lg font-semibold text-primary">Ascent</h4>
-                <button id="closeChatModal" class="text-blue-400 hover:text-blue-600">
-                    <i class="ph-bold ph-x text-xl"></i>
-                </button>
-            </div>
-            <div class="p-6 h-96 overflow-y-auto space-y-4">
-                <div class="flex justify-start">
-                    <div class="bg-blue-50 text-blue-800 p-3 rounded-lg max-w-xs">
-Olá, me chamo Ascent, sou sua assistente virtual e estou pronta para te ajudar a impulsionar o seu negócio. Minha missão é simplificar o seu dia a dia e te apoiar em todas as suas atividades financeiras, desde tirar dúvidas até te guiar em novas oportunidades.                    </div>
+            <section>
+            <div class="bg-white rounded-xl shadow-xl w-full max-w-lg transform transition-all">
+                <div class="flex items-center justify-between p-5 border-b border-blue-200">
+                    <h4 class="text-lg font-semibold text-primary">Ascent</h4>
+                    <button id="closeChatModal" class="text-blue-400 hover:text-blue-600">
+                        <i class="ph-bold ph-x text-xl"></i>
+                    </button>
                 </div>
-                <div class="flex justify-end">
-                    <div class="bg-primary text-white p-3 rounded-lg max-w-xs">
-                        Gostaria de saber como categorizar minhas despesas.
+                <div class="p-6 h-96 overflow-y-auto space-y-4">
+                    <div class="flex justify-start">
+                        <div class="bg-blue-50 text-blue-800 p-3 rounded-lg max-w-xs">
+Olá, me chamo Ascent, sou sua assistente virtual e estou pronta para te ajudar a impulsionar o seu negócio. Minha missão é simplificar o seu dia a dia e te apoiar em todas as suas atividades financeiras, desde tirar dúvidas até te guiar em novas oportunidades.                        </div>
+                    </div>
+                      <div class="flex justify-start">
+ <div class="bg-blue-50 text-blue-800 p-3 rounded-lg max-w-xs">
+Sugestões para você:
+  <button class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2 hover:bg-blue-200 transition-colors">Como declaro meus impostos?</button>
+                    <button class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2 hover:bg-blue-200 transition-colors">Como faço um empréstimo?</button>
+                    <button class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2 hover:bg-blue-200 transition-colors">Qual é o melhor investimento para mim?</button>
+                  
+
+</div>
+                    </div>
+                    
+                    <div class="flex justify-end">
+                        <div class="bg-primary text-white p-3 rounded-lg max-w-xs">
+                            Gostaria de saber como categorizar minhas despesas.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="bg-blue-50 text-blue-800 p-3 rounded-lg max-w-xs">
+                            Claro! Você pode categorizar suas despesas como: Custos Fixos (aluguel, salários), Custos Variáveis (matéria-prima, comissões), Despesas Operacionais (marketing, software), etc. Precisa de mais detalhes sobre alguma categoria?
+                        </div>
                     </div>
                 </div>
-                <div class="flex justify-start">
-                    <div class="bg-blue-50 text-blue-800 p-3 rounded-lg max-w-xs">
-                        Claro! Você pode categorizar suas despesas como: Custos Fixos (aluguel, salários), Custos Variáveis (matéria-prima, comissões), Despesas Operacionais (marketing, software), etc. Precisa de mais detalhes sobre alguma categoria?
+                <div class="p-5 border-t border-blue-800">
+                       <div class="flex items-center space-x-2">
+                        <input type="text" placeholder="Digite sua mensagem..." class="flex-1 p-3 border border-blue-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-shadow text-blue-900">
+                        <button class="bg-accent hover:bg-accent-dark text-white p-3 rounded-lg">
+                            <ion-icon name="send-outline"></ion-icon>
+                        </button>
                     </div>
                 </div>
             </div>
-            <div class="p-5 border-t border-blue-200">
-                <p> Sugestões de perguntas comuns:</p>
-              <button>teste</button> 
-               <button>teste</button> 
-                <button>teste</button> 
-                <div class="flex items-center space-x-2">
-                    <input type="text" placeholder="Digite sua mensagem..." class="flex-1 p-3 border border-blue-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-shadow text-blue-900">
-                    <button class="bg-accent hover:bg-accent-dark text-white p-3 rounded-lg">
-<ion-icon name="send-outline"></ion-icon>                    </button>
-                </div>
-            </div>
-        </div>      
             </section>
         </div>
 
@@ -476,88 +587,143 @@ Olá, me chamo Ascent, sou sua assistente virtual e estou pronta para te ajudar 
         </div>
 
         <div id="cursosSection" class="fade-section hidden">
-              <section class="mb-8 text-center sm:text-left">
-            <h1 class="text-3xl font-bold text-gray-800 mb-2">Construindo </h1>
-            <h2 class="text-xl font-semibold text-gray-700 mb-4">o seu negócio com conhecimento.</h2>
-            
-            <div class="card hover:shadow-lg transition-shadow">
-                <h3 class="text-lg font-semibold text-gray-800 mb-1">Perfil do usuário</h3>
-                <p class="text-sm text-gray-600">Que tal ir além? Com base nas suas ações, preparamos uma seleção de cursos online para você impulsionar seu conhecimento financeiro. Conte com nossa equipe de profissionais para aprender o que há de mais relevante e atual no mercado.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div  style="display: flex;">
-                    <p class="text-sm text-gray-600"><ion-icon name="search-outline"></ion-icon></p> 
-                    <input type="text" style="margin-left: 5px;   padding:3px 5px 3px 5px; width: 100%
-">
-                </div>
-
+            <section class="mb-8 text-center sm:text-left">
+                <h1 class="text-3xl font-bold text-gray-800 mb-2">Construindo </h1>
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">o seu negócio com conhecimento.</h2>
+                
                 <div class="card hover:shadow-lg transition-shadow">
-                    <p class="text-sm text-gray-600 mb-4">No BV, a gente acredita no seu potencial. Por isso, lançamos uma iniciativa com cursos gratuitos de empreendedorismo e educação financeira, feitos para você crescer e brilhar no seu negócio!</p>
-                    <div class="video-player-container w-full h-48 bg-gray-200 rounded-md flex items-center justify-center overflow-hidden">
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <p class="text-xs text-gray-500 mt-2">Assista ao nosso vídeo sobre empreendedorismo!</p>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">Perfil do usuário</h3>
+                    <p class="text-sm text-gray-600">Que tal ir além? Com base nas suas ações, preparamos uma seleção de cursos online para você impulsionar seu conhecimento financeiro. Conte com nossa equipe de profissionais para aprender o que há de mais relevante e atual no mercado.</p>
                 </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div style="display: flex; align-items: center;" class="card">
+                        <i class="ph-magnifying-glass text-xl text-gray-600 mr-2"></i>
+                        <input type="text" placeholder="Buscar cursos..." style="padding: 3px 5px; width: 100%;">
+                    </div>
+                    <div class="card hover:shadow-lg transition-shadow">
+                        <p class="text-sm text-gray-600 mb-4">No BV, a gente acredita no seu potencial. Por isso, lançamos uma iniciativa com cursos gratuitos de empreendedorismo e educação financeira, feitos para você crescer e brilhar no seu negócio!</p>
+                        <div class="video-player-container w-full h-48 bg-gray-200 rounded-md flex items-center justify-center overflow-hidden">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">Assista ao nosso vídeo sobre empreendedorismo!</p>
+                    </div>
 
-                <div class="card hover:shadow-lg transition-shadow">
-                    <p class="text-sm text-gray-600 mb-4">O Banco BV entende que seu negócio precisa de uma direção clara. Com a Ascent, nossa inteligência artificial guia sua jornada no app, garantindo que você encontre as melhores opções para ir além.</p>
-                    <div class="video-player-container w-full h-48 bg-gray-200 rounded-md flex items-center justify-center overflow-hidden">
-                        <iframe class="w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="card hover:shadow-lg transition-shadow">
+                        <p class="text-sm text-gray-600 mb-4">O Banco BV entende que seu negócio precisa de uma direção clara. Com a Ascent, nossa inteligência artificial guia sua jornada no app, garantindo que você encontre as melhores opções para ir além.</p>
+                        <div class="video-player-container w-full h-48 bg-gray-200 rounded-md flex items-center justify-center overflow-hidden">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">Saiba como a Ascent pode impulsionar seu negócio!</p>
                     </div>
-                    <p class="text-xs text-gray-500 mt-2">Saiba como a Ascent pode impulsionar seu negócio!</p>
                 </div>
-            </div>
-              </section>
+            </section>
         </div>
 
     </main>
 
-    <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-t-md border-t border-gray-200 p-2 flex justify-around md:hidden">
-        <a href="#" id="navHome" class="flex flex-col items-center bv-blue-text font-bold p-2 rounded-md">
-            <i class="ph-house text-2xl"></i>
+    <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-t-md border-t border-gray-200 p-2 flex justify-around z-50">
+        <a href="#" id="navHome" class="flex flex-col items-center bv-blue-text font-bold p-2 rounded-md flex-1">
+            <i class="ph-bold ph-house-simple text-2xl"></i>
             <span class="text-xs">Início</span>
         </a>
-        <a href="#" id="navExtrato" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md">
-            <i class="ph-list-bullets text-2xl"></i>
+        <a href="#" id="navExtrato" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md flex-1">
+            <i class="ph-bold ph-receipt text-2xl"></i>
             <span class="text-xs">Extrato</span>
         </a>
-        <a href="#" id="navChat" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md">
-            <i class="ph-credit-card text-2xl"></i>
+        <a href="#" id="navChat" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md flex-1">
+            <i class="ph-bold ph-chats-circle text-2xl"></i>
             <span class="text-xs">Chat</span>
         </a>
-        <a href="#" id="navCredito" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md">
-            <i class="ph-currency-dollar text-2xl"></i>
+        <a href="#" id="navCredito" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md flex-1">
+            <i class="ph-bold ph-currency-dollar text-2xl"></i>
             <span class="text-xs">Crédito</span>
         </a>
-        <a href="#" id="navCursos" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md">
-            <i class="ph-user-list text-2xl"></i>
+        <a href="#" id="navCursos" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md flex-1">
+            <i class="ph-bold ph-book-open text-2xl"></i>
             <span class="text-xs">Cursos</span>
         </a>
     </nav>
 
 
     <div id="aiChatModal" class="fixed inset-0 bg-blue-900 bg-opacity-60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden">
-       
+        
     </div>
 
     <script>
         // Script para o modal do chat IA
         const aiChatButton = document.getElementById('aiChatButton');
-        const aiChatModal = document.getElementById('aiChatModal');
+        const chatSection = document.getElementById('chatSection'); // Targeting the section directly now
         const closeChatModalButton = document.getElementById('closeChatModal');
-    
-        if (aiChatButton && aiChatModal && closeChatModalButton) {
+        const homeSection = document.getElementById('homeSection');
+
+        // INÍCIO DA ALTERAÇÃO: Novas constantes para os cards de "Crédito" e "Cursos"
+        const creditoCard = document.getElementById('creditoCard');
+        const cursosCard = document.getElementById('cursosCard');
+        const cardTransacao = document.getElementById('verTransacoes')
+        const extratoSection = document.getElementById('extratoSection')
+        // FIM DA ALTERAÇÃO
+
+
+        // Function to show a section and hide others
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('main > div');
+            sections.forEach(section => {
+                section.classList.remove('active-section');
+                section.classList.add('fade-section', 'hidden');
+            });
+
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden', 'fade-section');
+                void targetSection.offsetWidth; // Trigger reflow
+                targetSection.classList.add('active-section');
+            }
+
+            // Update active navigation link styling
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.classList.remove('bv-blue-text', 'font-bold');
+                link.classList.add('text-gray-600');
+            });
+            const activeNavLink = document.querySelector(`#nav${sectionId.replace('Section', '')}`);
+            if (activeNavLink) {
+                activeNavLink.classList.remove('text-gray-600');
+                activeNavLink.classList.add('bv-blue-text', 'font-bold');
+            }
+        }
+
+
+        if (aiChatButton && chatSection) {
             aiChatButton.addEventListener('click', () => {
-                aiChatModal.classList.remove('hidden');
+                showSection('chatSection'); // Show chat section when Ascent card is clicked
             });
+        }
+        if (closeChatModalButton && homeSection) { // Ensure homeSection exists
             closeChatModalButton.addEventListener('click', () => {
-                aiChatModal.classList.add('hidden');
+                showSection('homeSection'); // Go back to home when close button is clicked
             });
-            aiChatModal.addEventListener('click', (event) => {
-                if (event.target === aiChatModal) {
-                    aiChatModal.classList.add('hidden');
-                }
+        }
+
+        // INÍCIO DA ALTERAÇÃO: Adicionados event listeners para os novos cards
+        if (creditoCard) {
+            creditoCard.addEventListener('click', () => {
+                showSection('creditoSection');
+            });
+        }
+
+        if (cursosCard) {
+            cursosCard.addEventListener('click', () => {
+                showSection('cursosSection');
+            });
+        }
+        // FIM DA ALTERAÇÃO
+
+    
+
+           if (cardTransacao) {
+            cardTransacao.addEventListener('click', () => {
+                showSection('extratoSection');
             });
         }
 
@@ -570,10 +736,10 @@ Olá, me chamo Ascent, sou sua assistente virtual e estou pronta para te ajudar 
         function updateBalanceVisibility() {
             if (balanceVisible) {
                 balanceAmountElement.textContent = actualBalance;
-                toggleBalanceButton.innerHTML = '<i class="ph-eye mr-1"></i> Mostrar Saldo';
+                toggleBalanceButton.innerHTML = '<i class="ph-eye mr-1"></i> Ocultar Saldo'; // Changed to Ocultar
             } else {
                 balanceAmountElement.textContent = 'R$ ••••••';
-                toggleBalanceButton.innerHTML = '<i class="ph-eye-slash mr-1"></i> Ocultar Saldo';
+                toggleBalanceButton.innerHTML = '<i class="ph-eye-slash mr-1"></i> Mostrar Saldo'; // Changed to Mostrar
             }
         }
         // Inicializa com o saldo oculto
@@ -644,35 +810,8 @@ Olá, me chamo Ascent, sou sua assistente virtual e estou pronta para te ajudar 
         // --- New JavaScript for Section Fading ---
         document.addEventListener('DOMContentLoaded', () => {
             const navLinks = document.querySelectorAll('nav a');
-            const sections = document.querySelectorAll('main > div'); // Select all direct div children of main
-
-            function showSection(sectionId) {
-                const currentActiveSection = document.querySelector('.active-section');
-                if (currentActiveSection) {
-                    currentActiveSection.classList.remove('active-section');
-                    currentActiveSection.classList.add('fade-section', 'hidden'); // Fade out and then hide
-                }
-
-                const targetSection = document.getElementById(sectionId);
-                if (targetSection) {
-                    // Remove hidden and fade-section first to allow display block
-                    targetSection.classList.remove('hidden', 'fade-section');
-                    // Force reflow to ensure display: block is applied before transition
-                    void targetSection.offsetWidth; 
-                    targetSection.classList.add('active-section'); // Fade in
-                }
-
-                // Update active navigation link styling
-                navLinks.forEach(link => {
-                    link.classList.remove('bv-blue-text', 'font-bold');
-                    link.classList.add('text-gray-600');
-                });
-                const activeNavLink = document.querySelector(`#nav${sectionId.replace('Section', '')}`);
-                if (activeNavLink) {
-                    activeNavLink.classList.remove('text-gray-600');
-                    activeNavLink.classList.add('bv-blue-text', 'font-bold');
-                }
-            }
+            // Select all direct div children of main, as these are the sections
+            const sections = document.querySelectorAll('main > div'); 
 
             // Set initial active state for Home on load
             const initialActiveLink = document.getElementById('navHome');
@@ -701,6 +840,5 @@ Olá, me chamo Ascent, sou sua assistente virtual e estou pronta para te ajudar 
             });
         });
     </script>
-
 </body>
 </html>
