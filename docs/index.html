@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/phosphor-icons/1.4.2/css/phosphor.min.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-    <link rel="icon" type="image/png" href="./Logo_BV_1.png">
+    <link rel="icon" type="image/png" href="https://placehold.co/35x35/0073e6/ffffff?text=BV">
 
     <style>
         body {
@@ -95,9 +95,9 @@
             background-color: #DBEAFE; /* Tailwind blue-200, para fundo de ícones nos cards */
         }
         /* Estilo para o contêiner do gráfico para garantir que ele preencha o espaço */
-        #chart_div {
+        .chart-container {
             width: 100%;
-            height: 100%; /* Garante que o gráfico preencha a altura do seu contêiner pai */
+            height: 256px; /* Define uma altura padrão para os gráficos */
         }
 
         /* Styles for fade-in/out */
@@ -124,9 +124,13 @@
         /* Optional: To ensure the input has a border when NOT focused, if it's not set elsewhere */
         input {
             border: none;
-            background-color: #8ac4fa;
-            border-radius: 20px;
-            padding: 10px;
+            background-color: #e9f2ff; /* Light blue for input backgrounds */
+            border-radius: 0.5rem; /* 8px */
+            padding: 0.75rem; /* 12px */
+        }
+
+        input::placeholder {
+            color: #005bb5; /* Darker blue for placeholder text */
         }
     </style>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -137,7 +141,7 @@
     <header class="header-gradient text-white p-4 shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-2xl font-bold">
-                <img src="/Logo_BV_1.png" alt="Logo BV" style="width: 35px;">
+                <img src="https://placehold.co/35x35/0073e6/ffffff?text=BV" alt="Logo BV" style="width: 35px;">
             </div>
             <div class="flex items-center">
                 <i class="ph-user-circle text-3xl"></i>
@@ -152,15 +156,11 @@
                 <h1 class="text-3xl font-bold text-gray-800 mb-2">O apoio digital</h1>
                 <h2 class="text-xl font-semibold text-gray-700 mb-4">que seu empreendimento precisa.</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <!-- INÍCIO DA ALTERAÇÃO: Adicionado ID ao card "Soluções de crédito" -->
                     <div id="creditoCard" class="card hover:shadow-lg transition-shadow cursor-pointer">
-                    <!-- FIM DA ALTERAÇÃO -->
                         <h3 class="text-lg font-semibold text-gray-800 mb-1">Soluções de crédito<i class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">New</i></h3>
                         <p class="text-sm text-gray-600">No Banco BV, sabemos que todo negócio precisa de um impulso para decolar. Por isso, criamos soluções de crédito que realmente atendem às suas necessidades.</p>
                     </div>
-                    <!-- INÍCIO DA ALTERAÇÃO: Adicionado ID ao card "Educação Financeira" -->
                     <div id="cursosCard" class="card hover:shadow-lg transition-shadow cursor-pointer">
-                    <!-- FIM DA ALTERAÇÃO -->
                         <h3 class="text-lg font-semibold text-gray-800 mb-1">Educação Financeira<i class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full ml-1">New</i></h3>
                         <p class="text-sm text-gray-600">No BV, a gente acredita no seu potencial. Por isso, lançamos uma iniciativa com cursos gratuitos de empreendedorismo e educação financeira, feitos para você crescer e brilhar no seu negócio!</p>
                     </div>
@@ -207,10 +207,24 @@
                     <p class="text-sm text-gray-600">Saldo da sua Conta BV</p>
                     <p id="balanceAmount" class="text-3xl font-bold text-gray-800">R$ 0,00</p>
                 </div>
+                    <div class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
+                        <button class="bg-blue-100 hover:bg-blue-200 text-blue-700 py-2 px-1 rounded-lg text-xs transition-colors">
+                            <i class="ph-calendar-plus block text-lg mb-0.5 mx-auto"></i> Pix
+                        </button>
+                        <button class="bg-blue-100 hover:bg-blue-200 text-blue-700 py-2 px-1 rounded-lg text-xs transition-colors">
+                            <i class="ph-files block text-lg mb-0.5 mx-auto"></i> Cartão
+                        </button>
+                        <button class="bg-blue-100 hover:bg-blue-200 text-blue-700 py-2 px-1 rounded-lg text-xs transition-colors">
+                            <i class="ph-barcode block text-lg mb-0.5 mx-auto"></i> Teste
+                        </button>
+                        <button class="bg-blue-100 hover:bg-blue-200 text-blue-700 py-2 px-1 rounded-lg text-xs transition-colors">
+                            <i class="ph-calculator block text-lg mb-0.5 mx-auto"></i> Teste
+                        </button>
+                    </div>
             </section>
 
             <section class="card mt-6">
-                <h2 class="text-xl font-semibold text-gray-800 mb-3">Credito Personalizado - Microcrédito</h2>
+                <h2 class="text-xl font-semibold text-gray-800 mb-3">Crédito Personalizado - Microcrédito</h2>
                 <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
                     <div class="flex items-center mb-3">
                         <i class="ph-car text-3xl text-blue-600 mr-3"></i>
@@ -308,15 +322,22 @@
                     </div>
                 </div>
             </div>
-        </section>
+            </section>
 
             <section class="card hover:shadow-lg transition-shadow bg-white p-6 rounded-xl shadow-card">
                 <h3 class="text-lg font-semibold text-blue-800 mb-4">Fluxo de Caixa Mensal</h3>
-                <div id="chart_div" style="width: 100%; height: 256px;"></div> </section>
+                <div id="chart_div" class="chart-container"></div>
+            </section>
         </div>
 
         <div id="extratoSection" class="fade-section hidden">
             <section >
+
+                <section class="card mt-6">
+                <h3 class="text-lg font-semibold text-blue-800 mb-4">Despesas por Categoria</h3>
+                <div id="expense_pie_chart" class="chart-container"></div>
+            </section>
+
             <div class="card hover:shadow-lg transition-shadow lg:col-span-2 bg-white p-6 rounded-xl shadow-card">
                 <div class="flex items-center justify-between mb-6">
                     <h3 class="text-lg font-semibold text-blue-800">Histórico de Transações</h3>
@@ -349,8 +370,8 @@
                         </div>
                         <p class="font-semibold text-accent">- R$ 180,70</p>
                     </div>
-                   
-                     <!-- Item de Transação -->
+                    
+                    <!-- Item de Transação -->
                     <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
                         <div class="flex items-center space-x-3">
                             <div class="p-2 bg-pink-100 rounded-full">
@@ -363,7 +384,7 @@
                         </div>
                         <p class="font-semibold text-pink-600">- R$ 99,00</p>
                     </div>
-                     <!-- Item de Transação -->
+                    <!-- Item de Transação -->
                     <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
                         <div class="flex items-center space-x-3">
                             <div class="p-2 bg-pink-100 rounded-full">
@@ -376,7 +397,7 @@
                         </div>
                         <p class="font-semibold text-pink-600">- R$ 12,00</p>
                     </div>
-                     <!-- Item de Transação -->
+                    <!-- Item de Transação -->
                     <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
                         <div class="flex items-center space-x-3">
                             <div class="p-2 bg-pink-100 rounded-full">
@@ -389,7 +410,7 @@
                         </div>
                         <p class="font-semibold text-blue-600">+ R$ 344,00</p>
                     </div>
-                     <!-- Item de Transação -->
+                    <!-- Item de Transação -->
                     <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
                         <div class="flex items-center space-x-3">
                             <div class="p-2 bg-pink-100 rounded-full">
@@ -402,7 +423,7 @@
                         </div>
                         <p class="font-semibold text-blue-600"> R$ 82,00</p>
                     </div>
-                     <!-- Item de Transação -->
+                    <!-- Item de Transação -->
                     <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
                         <div class="flex items-center space-x-3">
                             <div class="p-2 bg-pink-100 rounded-full">
@@ -415,7 +436,7 @@
                         </div>
                         <p class="font-semibold text-pink-600">- R$ 100,00</p>
                     </div>
-                     <!-- Item de Transação -->
+                    <!-- Item de Transação -->
                     <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
                         <div class="flex items-center space-x-3">
                             <div class="p-2 bg-pink-100 rounded-full">
@@ -428,7 +449,7 @@
                         </div>
                         <p class="font-semibold text-pink-600">- R$ 10,00</p>
                     </div>
-                     <!-- Item de Transação -->
+                    <!-- Item de Transação -->
                     <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
                         <div class="flex items-center space-x-3">
                             <div class="p-2 bg-pink-100 rounded-full">
@@ -441,7 +462,7 @@
                         </div>
                         <p class="font-semibold text-blue-600">+ R$ 1200,00</p>
                     </div>
-                     <!-- Item de Transação -->
+                    <!-- Item de Transação -->
                     <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
                         <div class="flex items-center space-x-3">
                             <div class="p-2 bg-pink-100 rounded-full">
@@ -454,7 +475,7 @@
                         </div>
                         <p class="font-semibold text-pink-600">- R$ 20,00</p>
                     </div>
-                     <!-- Item de Transação -->
+                    <!-- Item de Transação -->
                     <div class="flex items-center justify-between p-3 rounded-lg hover:bg-blue-50">
                         <div class="flex items-center space-x-3">
                             <div class="p-2 bg-pink-100 rounded-full">
@@ -483,6 +504,7 @@
                     </div>
                 </div>
             </div>
+            
 
             </section>
         </div>
@@ -501,13 +523,13 @@
                         <div class="bg-blue-50 text-blue-800 p-3 rounded-lg max-w-xs">
 Olá, me chamo Ascent, sou sua assistente virtual e estou pronta para te ajudar a impulsionar o seu negócio. Minha missão é simplificar o seu dia a dia e te apoiar em todas as suas atividades financeiras, desde tirar dúvidas até te guiar em novas oportunidades.                        </div>
                     </div>
-                      <div class="flex justify-start">
- <div class="bg-blue-50 text-blue-800 p-3 rounded-lg max-w-xs">
+                    <div class="flex justify-start">
+<div class="bg-blue-50 text-blue-800 p-3 rounded-lg max-w-xs">
 Sugestões para você:
-  <button class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2 hover:bg-blue-200 transition-colors">Como declaro meus impostos?</button>
+<button class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2 hover:bg-blue-200 transition-colors">Como declaro meus impostos?</button>
                     <button class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2 hover:bg-blue-200 transition-colors">Como faço um empréstimo?</button>
                     <button class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2 hover:bg-blue-200 transition-colors">Qual é o melhor investimento para mim?</button>
-                  
+                    
 
 </div>
                     </div>
@@ -524,7 +546,7 @@ Sugestões para você:
                     </div>
                 </div>
                 <div class="p-5 border-t border-blue-800">
-                       <div class="flex items-center space-x-2">
+                        <div class="flex items-center space-x-2">
                         <input type="text" placeholder="Digite sua mensagem..." class="flex-1 p-3 border border-blue-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-shadow text-blue-900">
                         <button class="bg-accent hover:bg-accent-dark text-white p-3 rounded-lg">
                             <ion-icon name="send-outline"></ion-icon>
@@ -547,7 +569,7 @@ Sugestões para você:
             </section>
             <section class="card">
                 <div >
-                <h2 class="text-xl font-semibold text-gray-800 mb-3">Credito Personalizado - Microcrédito</h2>
+                <h2 class="text-xl font-semibold text-gray-800 mb-3">Crédito Personalizado - Microcrédito</h2>
                 <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
                     <div class="flex items-center mb-3">
                         <i class="ph-car text-3xl text-blue-600 mr-3"></i>
@@ -584,6 +606,57 @@ Sugestões para você:
                 </div>
 </div>
             </section>
+
+            <!-- NEW: Cartões Section within Crédito -->
+            <section class="card mt-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Meus Cartões</h2>
+                <p class="text-gray-600 mb-4">Gerencie seus cartões de crédito, débito e virtuais.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Cartão de Crédito -->
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-200 flex items-center space-x-3">
+                        <i class="ph-credit-card text-3xl text-blue-600"></i>
+                        <div>
+                            <p class="font-semibold text-gray-700">BV Empresarial Crédito</p>
+                            <p class="text-sm text-gray-500">**** **** **** 1234</p>
+                            <p class="text-xs text-green-600">Limite disponível: R$ 5.000,00</p>
+                        </div>
+                    </div>
+                    <!-- Cartão de Débito -->
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200 flex items-center space-x-3">
+                        <i class="ph-bank text-3xl text-green-600"></i>
+                        <div>
+                            <p class="font-semibold text-gray-700">BV Empresarial Débito</p>
+                            <p class="text-sm text-gray-500">**** **** **** 5678</p>
+                            <p class="text-xs text-gray-600">Conectado à Conta BV</p>
+                        </div>
+                    </div>
+                    <!-- Cartão Virtual -->
+                    <div class="bg-purple-50 p-4 rounded-lg border border-purple-200 flex items-center space-x-3">
+                        <i class="ph-device-mobile text-3xl text-purple-600"></i>
+                        <div>
+                            <p class="font-semibold text-gray-700">Cartão Virtual para Compras Online</p>
+                            <p class="text-sm text-gray-500">Gerado: 05/06/2024</p>
+                            <p class="text-xs text-yellow-600">Válido por 24h</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
+                    <button class="bg-primary hover:bg-primary-dark text-white py-2 px-1 rounded-lg text-xs transition-colors">
+                        <i class="ph-cardholder block text-lg mb-0.5 mx-auto"></i> Solicitar Novo
+                    </button>
+                    <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-1 rounded-lg text-xs transition-colors">
+                        <i class="ph-lock-simple block text-lg mb-0.5 mx-auto"></i> Bloquear/Desbloquear
+                    </button>
+                    <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-1 rounded-lg text-xs transition-colors">
+                        <i class="ph-info block text-lg mb-0.5 mx-auto"></i> Ver Detalhes
+                    </button>
+                    <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-1 rounded-lg text-xs transition-colors">
+                        <i class="ph-arrows-clockwise block text-lg mb-0.5 mx-auto"></i> Gerar Virtual
+                    </button>
+                </div>
+            </section>
         </div>
 
         <div id="cursosSection" class="fade-section hidden">
@@ -595,12 +668,15 @@ Sugestões para você:
                     <h3 class="text-lg font-semibold text-gray-800 mb-1">Perfil do usuário</h3>
                     <p class="text-sm text-gray-600">Que tal ir além? Com base nas suas ações, preparamos uma seleção de cursos online para você impulsionar seu conhecimento financeiro. Conte com nossa equipe de profissionais para aprender o que há de mais relevante e atual no mercado.</p>
                 </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div style="display: flex; align-items: center;" class="card">
-                        <i class="ph-magnifying-glass text-xl text-gray-600 mr-2"></i>
-                        <input type="text" placeholder="Buscar cursos..." style="padding: 3px 5px; width: 100%;">
+                <div style="display: flex; align-items: center; margin: 20px" >
+<ion-icon name="search-outline"></ion-icon>
+                    <input type="text" placeholder="Buscar cursos..." style="padding: 3px 5px; width: 100%;">
                     </div>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    
+                    
                     <div class="card hover:shadow-lg transition-shadow">
                         <p class="text-sm text-gray-600 mb-4">No BV, a gente acredita no seu potencial. Por isso, lançamos uma iniciativa com cursos gratuitos de empreendedorismo e educação financeira, feitos para você crescer e brilhar no seu negócio!</p>
                         <div class="video-player-container w-full h-48 bg-gray-200 rounded-md flex items-center justify-center overflow-hidden">
@@ -620,6 +696,118 @@ Sugestões para você:
             </section>
         </div>
 
+        <!-- NEW: Faturas Section -->
+        <div id="faturasSection" class="fade-section hidden">
+            <section class="card">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Minhas Faturas</h2>
+                <p class="text-gray-600 mb-4">Crie e gerencie suas faturas de forma simples e rápida.</p>
+
+                <div class="mb-6 p-4 border border-blue-200 rounded-lg bg-blue-50">
+                    <h3 class="text-lg font-semibold text-blue-800 mb-3">Nova Fatura</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="invoiceRecipient" class="block text-sm font-medium text-gray-700 mb-1">Para:</label>
+                            <input type="text" id="invoiceRecipient" placeholder="Nome do Cliente" class="w-full" required>
+                        </div>
+                        <div>
+                            <label for="invoiceAmount" class="block text-sm font-medium text-gray-700 mb-1">Valor (R$):</label>
+                            <input type="number" id="invoiceAmount" placeholder="Ex: 250,00" step="0.01" class="w-full" required>
+                        </div>
+                        <div>
+                            <label for="invoiceDueDate" class="block text-sm font-medium text-gray-700 mb-1">Data de Vencimento:</label>
+                            <input type="date" id="invoiceDueDate" class="w-full" required>
+                        </div>
+                        <div>
+                            <label for="invoiceDescription" class="block text-sm font-medium text-gray-700 mb-1">Descrição:</label>
+                            <input type="text" id="invoiceDescription" placeholder="Serviço/Produto" class="w-full">
+                        </div>
+                    </div>
+                    <button id="addInvoiceButton" class="mt-4 w-full bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded-lg transition-colors">
+                        Gerar Fatura
+                    </button>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Faturas Geradas</h3>
+                    <div id="invoicesList" class="space-y-3">
+                        <!-- Invoice items will be appended here -->
+                        <div class="flex items-center justify-between p-3 rounded-lg bg-gray-50 border border-gray-200">
+                            <div>
+                                <p class="font-medium text-gray-800">Cliente Alpha - R$ 500,00</p>
+                                <p class="text-xs text-gray-500">Serviço de Consultoria - Vencimento: 15/06/2024</p>
+                            </div>
+                            <span class="text-sm text-green-600 font-semibold">Pendente</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 rounded-lg bg-gray-50 border border-gray-200">
+                            <div>
+                                <p class="font-medium text-gray-800">Cliente Beta - R$ 120,00</p>
+                                <p class="text-xs text-gray-500">Venda de Produto - Vencimento: 01/07/2024</p>
+                            </div>
+                            <span class="text-sm text-yellow-600 font-semibold">Aberto</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- NEW: Orçamento Section -->
+        <div id="orcamentoSection" class="fade-section hidden">
+            <section class="card">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Meu Orçamento</h2>
+                <p class="text-gray-600 mb-4">Defina e acompanhe seus orçamentos por categoria para manter suas finanças sob controle.</p>
+
+                <div class="mb-6 p-4 border border-green-200 rounded-lg bg-green-50">
+                    <h3 class="text-lg font-semibold text-green-800 mb-3">Adicionar Categoria de Orçamento</h3>
+                    <div class="flex items-center space-x-2">
+                        <input type="text" id="budgetCategory" placeholder="Nome da Categoria (Ex: Marketing)" required>
+                        <input type="number" id="budgetAmount" placeholder="Valor Orçado (R$)" step="0.01" class="w-full" required>
+                    </div>
+                    <button id="addBudgetButton" class="mt-4 w-full bg-bv-green hover:bg-green-700 text-green-300 font-bold py-2 px-4 rounded-lg transition-colors">
+                        Adicionar Orçamento
+                    </button>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Categorias de Orçamento</h3>
+                    <div id="budgetList" class="space-y-3">
+                        <!-- Budget items will be appended here -->
+                        <div class="flex items-center justify-between p-3 rounded-lg bg-gray-50 border border-gray-200">
+                            <div>
+                                <p class="font-medium text-gray-800">Aluguel:</p>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 75%"></div>
+                                </div>
+                                <p class="text-xs text-gray-500">R$ 1.500,00 de R$ 2.000,00 gastos (75%)</p>
+                            </div>
+                            <span class="text-sm text-blue-600 font-semibold">R$ 2.000,00</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 rounded-lg bg-gray-50 border border-gray-200">
+                            <div>
+                                <p class="font-medium text-gray-800">Materiais:</p>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-red-600 h-2.5 rounded-full" style="width: 95%"></div>
+                                </div>
+                                <p class="text-xs text-gray-500">R$ 950,00 de R$ 1.000,00 gastos (95%)</p>
+                            </div>
+                            <span class="text-sm text-red-600 font-semibold">R$ 1.000,00</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 rounded-lg bg-gray-50 border border-gray-200">
+                            <div>
+                                <p class="font-medium text-gray-800">Marketing:</p>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-green-600 h-2.5 rounded-full" style="width: 40%"></div>
+                                </div>
+                                <p class="text-xs text-gray-500">R$ 200,00 de R$ 500,00 gastos (40%)</p>
+                            </div>
+                            <span class="text-sm text-green-600 font-semibold">R$ 500,00</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+        </div>
+
+
     </main>
 
     <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-t-md border-t border-gray-200 p-2 flex justify-around z-50">
@@ -631,9 +819,17 @@ Sugestões para você:
             <i class="ph-bold ph-receipt text-2xl"></i>
             <span class="text-xs">Extrato</span>
         </a>
-        <a href="#" id="navChat" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md flex-1">
+        <a href="#" id="navFaturas" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md flex-1">
+            <i class="ph-bold ph-invoice text-2xl"></i>
+            <span class="text-xs">Faturas</span>
+        </a>
+         <a href="#" id="navChat" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md flex-1">
             <i class="ph-bold ph-chats-circle text-2xl"></i>
             <span class="text-xs">Chat</span>
+        </a>
+        <a href="#" id="navOrcamento" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md flex-1">
+            <i class="ph-bold ph-chart-pie text-2xl"></i>
+            <span class="text-xs">Orçamento</span>
         </a>
         <a href="#" id="navCredito" class="flex flex-col items-center text-gray-600 hover:bv-blue-text p-2 rounded-md flex-1">
             <i class="ph-bold ph-currency-dollar text-2xl"></i>
@@ -657,12 +853,26 @@ Sugestões para você:
         const closeChatModalButton = document.getElementById('closeChatModal');
         const homeSection = document.getElementById('homeSection');
 
-        // INÍCIO DA ALTERAÇÃO: Novas constantes para os cards de "Crédito" e "Cursos"
         const creditoCard = document.getElementById('creditoCard');
         const cursosCard = document.getElementById('cursosCard');
-        const cardTransacao = document.getElementById('verTransacoes')
-        const extratoSection = document.getElementById('extratoSection')
-        // FIM DA ALTERAÇÃO
+        const cardTransacao = document.getElementById('verTransacoes');
+        const extratoSection = document.getElementById('extratoSection');
+
+        // NEW: Invoicing elements
+        const faturasSection = document.getElementById('faturasSection');
+        const addInvoiceButton = document.getElementById('addInvoiceButton');
+        const invoicesList = document.getElementById('invoicesList');
+        const invoiceRecipientInput = document.getElementById('invoiceRecipient');
+        const invoiceAmountInput = document.getElementById('invoiceAmount');
+        const invoiceDueDateInput = document.getElementById('invoiceDueDate');
+        const invoiceDescriptionInput = document.getElementById('invoiceDescription');
+
+        // NEW: Budgeting elements
+        const orcamentoSection = document.getElementById('orcamentoSection');
+        const addBudgetButton = document.getElementById('addBudgetButton');
+        const budgetList = document.getElementById('budgetList');
+        const budgetCategoryInput = document.getElementById('budgetCategory');
+        const budgetAmountInput = document.getElementById('budgetAmount');
 
 
         // Function to show a section and hide others
@@ -678,6 +888,14 @@ Sugestões para você:
                 targetSection.classList.remove('hidden', 'fade-section');
                 void targetSection.offsetWidth; // Trigger reflow
                 targetSection.classList.add('active-section');
+                // Draw charts when the section is shown
+                if (sectionId === 'extratoSection') {
+                    drawExpenseCategoriesChart();
+                } else if (sectionId === 'orcamentoSection') {
+                    drawBudgetVsActualChart();
+                } else if (sectionId === 'homeSection') {
+                    drawChart(); // Re-draw main chart
+                }
             }
 
             // Update active navigation link styling
@@ -705,7 +923,6 @@ Sugestões para você:
             });
         }
 
-        // INÍCIO DA ALTERAÇÃO: Adicionados event listeners para os novos cards
         if (creditoCard) {
             creditoCard.addEventListener('click', () => {
                 showSection('creditoSection');
@@ -717,15 +934,75 @@ Sugestões para você:
                 showSection('cursosSection');
             });
         }
-        // FIM DA ALTERAÇÃO
-
-    
-
-           if (cardTransacao) {
+        
+        if (cardTransacao) {
             cardTransacao.addEventListener('click', () => {
                 showSection('extratoSection');
             });
         }
+
+        // NEW: Invoice functionality
+        if (addInvoiceButton) {
+            addInvoiceButton.addEventListener('click', () => {
+                const recipient = invoiceRecipientInput.value.trim();
+                const amount = invoiceAmountInput.value.trim();
+                const dueDate = invoiceDueDateInput.value.trim();
+                const description = invoiceDescriptionInput.value.trim();
+
+                if (recipient && amount && dueDate) {
+                    const newInvoiceItem = document.createElement('div');
+                    newInvoiceItem.classList.add('flex', 'items-center', 'justify-between', 'p-3', 'rounded-lg', 'bg-gray-50', 'border', 'border-gray-200');
+                    newInvoiceItem.innerHTML = `
+                        <div>
+                            <p class="font-medium text-gray-800">${recipient} - R$ ${parseFloat(amount).toFixed(2).replace('.', ',')}</p>
+                            <p class="text-xs text-gray-500">${description || 'Fatura de Serviço/Produto'} - Vencimento: ${new Date(dueDate).toLocaleDateString('pt-BR')}</p>
+                        </div>
+                        <span class="text-sm text-yellow-600 font-semibold">Aberto</span>
+                    `;
+                    invoicesList.appendChild(newInvoiceItem);
+
+                    // Clear form
+                    invoiceRecipientInput.value = '';
+                    invoiceAmountInput.value = '';
+                    invoiceDueDateInput.value = '';
+                    invoiceDescriptionInput.value = '';
+                } else {
+                    // Using a simple alert for demonstration. In a real app, use a custom modal.
+                    console.log('Por favor, preencha todos os campos obrigatórios da fatura.');
+                }
+            });
+        }
+
+        // NEW: Budgeting functionality
+        if (addBudgetButton) {
+            addBudgetButton.addEventListener('click', () => {
+                const category = budgetCategoryInput.value.trim();
+                const amount = budgetAmountInput.value.trim();
+
+                if (category && amount && parseFloat(amount) > 0) {
+                    const newBudgetItem = document.createElement('div');
+                    newBudgetItem.classList.add('flex', 'items-center', 'justify-between', 'p-3', 'rounded-lg', 'bg-gray-50', 'border', 'border-gray-200');
+                    newBudgetItem.innerHTML = `
+                        <div>
+                            <p class="font-medium text-gray-800">${category}:</p>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-green-600 h-2.5 rounded-full" style="width: 0%"></div> 
+                            </div>
+                            <p class="text-xs text-gray-500">R$ 0,00 de R$ ${parseFloat(amount).toFixed(2).replace('.', ',')} gastos (0%)</p>
+                        </div>
+                        <span class="text-sm text-green-600 font-semibold">R$ ${parseFloat(amount).toFixed(2).replace('.', ',')}</span>
+                    `;
+                    budgetList.appendChild(newBudgetItem);
+
+                    // Clear form
+                    budgetCategoryInput.value = '';
+                    budgetAmountInput.value = '';
+                } else {
+                    console.log('Por favor, insira uma categoria e um valor válidos para o orçamento.');
+                }
+            });
+        }
+
 
         // Script para alternar a visibilidade do saldo
         const toggleBalanceButton = document.getElementById('toggleBalance');
@@ -752,7 +1029,10 @@ Sugestões para você:
 
         // Carrega a API do Google Charts e desenha o gráfico de barras
         google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
+        google.charts.setOnLoadCallback(function() {
+            // Initial draw for home section chart
+            drawChart(); 
+        });
 
         function drawChart() {
             // Cria a tabela de dados para o gráfico de barras
@@ -781,6 +1061,7 @@ Sugestões para você:
                     titleTextStyle: { color: '#333' }
                 },
                 vAxis: {
+                    minValue: 0, // Ensure y-axis starts at 0
                     titleTextStyle: { color: '#333' },
                     format: 'currency',
                     gridlines: { color: '#e0e0e0' }
@@ -807,6 +1088,36 @@ Sugestões para você:
             chart.draw(data, options);
         }
 
+        // NEW: Function to draw Expense Categories Pie Chart
+        function drawExpenseCategoriesChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Category', 'Amount'],
+                ['Material Escritório', 180.70],
+                ['Assinatura Software', 99.00],
+                ['Despesas Diversas', 112.00], // Sum of Despesa D and Despesa W
+                ['Outros', 20.00] // Despesa Y
+            ]);
+
+            var options = {
+                title: 'Distribuição de Despesas',
+                pieHole: 0.4, // For a donut chart
+                colors: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'], // Custom colors
+                backgroundColor: { fill: 'transparent' },
+                legend: { position: 'right', alignment: 'center' },
+                chartArea: { left: '5%', top: '10%', width: '90%', height: '80%' },
+                tooltip: { textStyle: { fontSize: 13 } }
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('expense_pie_chart'));
+            chart.draw(data, options);
+
+            window.addEventListener('resize', function() {
+                chart.draw(data, options);
+            });
+        }
+
+     
+
         // --- New JavaScript for Section Fading ---
         document.addEventListener('DOMContentLoaded', () => {
             const navLinks = document.querySelectorAll('nav a');
@@ -829,7 +1140,9 @@ Sugestões para você:
                         'navExtrato': 'extratoSection',
                         'navChat': 'chatSection',
                         'navCredito': 'creditoSection',
-                        'navCursos': 'cursosSection'
+                        'navCursos': 'cursosSection',
+                        'navFaturas': 'faturasSection', // NEW
+                        'navOrcamento': 'orcamentoSection' // NEW
                     };
                     const clickedLinkId = e.currentTarget.id;
                     const targetSectionId = sectionIdMap[clickedLinkId];
