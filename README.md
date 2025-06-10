@@ -35,7 +35,7 @@ Clique na imagem ao lado e explore a interface dinâmica!</p>
 </a>
   <p align = "left" text-align = "center" > A tela inicial é o painel de controle central da empreendedora, projetada para oferecer uma visão rápida e estratégica do negócio.</p>
 <p>
-Mensagem de Apoio e Cards de Navegação: A interface começa com a mensagem "O apoio digital que seu empreendimento precisa", direcionando imediatamente para três áreas-chave:
+Mensagem de Apoio e Cards de Navegação: A interface começa com a mensagem "O apoio digital que seu empreendimento precisa", direcionando imediatamente para três novidades:
 </p>  <p>
 Soluções de Crédito: Um atalho para explorar opções de financiamento e microcrédito, essenciais para investimentos e crescimento.</p>
 <p>
