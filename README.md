@@ -13,13 +13,13 @@ Clique na imagem ao lado e explore a interface dinâmica!</p>
 
   
 ### Índice
-- [Tela Ínicio](https://github.com/Thamine-S/Projeto-Banco-BV/tree/main?tab=readme-ov-file#extrato)
-- [Tela Extrato](https://github.com/Thamine-S/Projeto-Banco-BV/main/README.md#extrato)
-- [Tela Faturas](https://github.com/Thamine-S/Projeto-Banco-BV/main/README.md#faturas)
-- [Tela Chat](https://github.com/Thamine-S/Projeto-Banco-BV/main/README.md#chat)
-- [Tela Orçamento](https://github.com/Thamine-S/Projeto-Banco-BV/main/README.md#orçamento)
-- [Tela Crédito](https://github.com/Thamine-S/Projeto-Banco-BV/main/README.md#crédito)
-- [Tela Cursos](https://github.com/Thamine-S/Projeto-Banco-BV/main/README.md#cursos)
+- [Tela Ínicio](https://github.com/Thamine-S/Projeto-Banco-BV/tree/main?tab=readme-ov-file#ínicio)
+- [Tela Extrato](https://github.com/Thamine-S/Projeto-Banco-BV/tree/main?tab=readme-ov-file#extrato)
+- [Tela Faturas](https://github.com/Thamine-S/Projeto-Banco-BV/tree/main?tab=readme-ov-file#faturas)
+- [Tela Chat](https://github.com/Thamine-S/Projeto-Banco-BV/tree/main?tab=readme-ov-file#chat)
+- [Tela Orçamento](https://github.com/Thamine-S/Projeto-Banco-BV/tree/main?tab=readme-ov-file#orçamento)
+- [Tela Crédito](https://github.com/Thamine-S/Projeto-Banco-BV/tree/main?tab=readme-ov-file#crédito)
+- [Tela Cursos](https://github.com/Thamine-S/Projeto-Banco-BV/tree/main?tab=readme-ov-file#curso)
   
 </div>
 
