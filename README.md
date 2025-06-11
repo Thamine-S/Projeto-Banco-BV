@@ -8,7 +8,7 @@ Este projeto é uma interface de internet banking desenvolvida para o processo s
   <a href="https://thamine-s.github.io/Projeto-Banco-BV/">
    <img src="https://github.com/user-attachments/assets/da9f3699-029a-4d11-be00-af9ff4b107d5" width="350" align = "right" >
 </a>
-  <p align = "left" text-align = "center" > Descubra na prática como nossas ferramentas podem transformar a gestão do seu negócio. <br>
+  <p align = "left" text-align = "center" > 
 Clique na imagem ao lado e explore a interface dinâmica!</p>
 
   
